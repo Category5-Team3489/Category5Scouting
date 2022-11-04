@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './NavMenu.css';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { LinkContainer } from 'react-router-bootstrap'
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -24,23 +28,27 @@ export class NavMenu extends Component {
   render () {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <NavbarBrand tag={Link} to="/">Category5Scouting</NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-                </NavItem>
-              </ul>
-            </Collapse>
+            <LinkContainer to="/">
+              <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+            </LinkContainer>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+              <LinkContainer to="/counter">
+                <Nav.Link>Counter</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/fetch-data">
+                <Nav.Link>Fetch data</Nav.Link>
+              </LinkContainer>
+              </Nav>
+              <Nav>
+                <LinkContainer to="/settings">
+                  <Nav.Link>Settings</Nav.Link>
+                </LinkContainer>
+              </Nav>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
       </header>
