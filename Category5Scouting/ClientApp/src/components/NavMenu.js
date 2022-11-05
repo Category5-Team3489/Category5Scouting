@@ -31,7 +31,7 @@ export class NavMenu extends Component {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
             <LinkContainer to="/">
-              <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+              <Navbar.Brand>Home</Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,6 +41,9 @@ export class NavMenu extends Component {
               </LinkContainer>
               <LinkContainer to="/fetch-data">
                 <Nav.Link>Fetch data</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/useful-links">
+                <Nav.Link>Useful links</Nav.Link>
               </LinkContainer>
               </Nav>
               <Nav>

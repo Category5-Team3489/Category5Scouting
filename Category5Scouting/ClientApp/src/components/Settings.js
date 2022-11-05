@@ -52,19 +52,30 @@ export const Settings = () => {
         <Alert variant="dark">
           <Alert.Heading>Scouter Selection</Alert.Heading>
           <Form.Select aria-label="Scouter selection" onChange={(e) => setScouter(e.target.value)}>
-            <option key="0" value="null">Select your name</option>
+            <option key="none" value="none">Select your name</option>
             {scouters.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
           </Form.Select>
-          Selected scouter id: {scouter}
+          <br />
           <InputGroup className="mb-3">
-            <Button variant="danger" id="delete-scouter" onClick={deleteScouter}>
-              Delete Selected Scouter
-            </Button>
             <Button variant="success" id="create-scouter" onClick={createScouter}>
               Create Scouter
             </Button>
             <Form.Control aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
           </InputGroup>
+          {
+            scouter !== "none" ? (
+              <InputGroup className="mb-3">
+                <Button variant="danger" id="delete-scouter" onClick={deleteScouter}>
+                  Delete Selected Scouter
+                </Button>
+                <Form.Control aria-label="Selected scouter id" value={scouter} readOnly/>
+              </InputGroup>
+            ) : (
+              <Button variant="danger" id="delete-scouter" disabled>
+                Delete Selected Scouter
+              </Button>
+            )
+          }
         </Alert>
       </Col>
       <Col>
