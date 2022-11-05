@@ -1,5 +1,6 @@
 namespace Category5Scouting
 {
+    /*
     public class WeatherForecast
     {
         public DateTime Date { get; set; }
@@ -10,4 +11,5 @@ namespace Category5Scouting
 
         public string? Summary { get; set; }
     }
+    */
 }

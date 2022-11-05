@@ -2,6 +2,7 @@
 
 namespace Category5Scouting.Controllers
 {
+    /*
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -30,4 +31,5 @@ namespace Category5Scouting.Controllers
             .ToArray();
         }
     }
+    */
 }

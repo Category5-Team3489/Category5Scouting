@@ -1,4 +1,6 @@
+using Category5Scouting;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Text.Json.Nodes;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,7 +49,7 @@ lock (scoutersLock)
 
 //https://stackoverflow.com/questions/37230555/get-with-query-string-with-fetch-in-react-native
 
-app.MapGet("/scouters", () =>
+app.MapGet("/api/scouters", () =>
 {
     lock (scoutersLock)
     {
@@ -55,7 +57,7 @@ app.MapGet("/scouters", () =>
     }
 });
 
-app.MapGet("/add-scouter", (string name) => {
+app.MapGet("/api/create-scouter", (string name) => {
 
     lock (scoutersLock)
     {
@@ -64,8 +66,35 @@ app.MapGet("/add-scouter", (string name) => {
     }
 });
 
+app.MapGet("/api/delete-scouter", (string id) => {
+
+    lock (scoutersLock)
+    {
+        scouters.RemoveAll(s => s.Id == id);
+        return scouters;
+    }
+});
+
+string[] Summaries = new[]
+{
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+};
+
+app.MapGet("/api/weatherforecast", () =>
+{
+    return Enumerable.Range(1, 5).Select(index => new WeatherForecast(
+        DateTime.Now.AddDays(index),
+        Random.Shared.Next(-20, 55),
+        Summaries[Random.Shared.Next(Summaries.Length)]
+    ));
+});
+
 app.MapFallbackToFile("index.html");
 
 app.Run();
 
 record Scouter(string Id, string Name);
+record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}

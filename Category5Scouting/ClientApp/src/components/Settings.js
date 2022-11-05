@@ -18,22 +18,29 @@ export const Settings = () => {
   ]
   */
 
-  const [scouter, setScouter] = useState("null");
+  const [scouter, setScouter] = useState("none");
 
   const [scouters, setScouters] = useState([]);
 
-  const [addScouterName, setAddScouterName] = useState("");
+  const [createScouterName, setCreateScouterName] = useState("");
 
   // Heartbeat the selected scouter to the server once a second or so
 
   useEffect(() => {
-    fetch('scouters')
+    fetch('api/scouters')
     .then(response => response.json())
     .then(data => setScouters(data));
   });
 
-  let addScouter = () => {
-    fetch('add-scouter?name=' + encodeURIComponent(addScouterName))
+  let createScouter = () => {
+    fetch('api/create-scouter?name=' + encodeURIComponent(createScouterName))
+    .then(response => response.json())
+    .then(data => setScouters(data));
+  }
+
+  let deleteScouter = () => {
+    setScouter("none");
+    fetch('api/delete-scouter?id=' + encodeURIComponent(scouter))
     .then(response => response.json())
     .then(data => setScouters(data));
   }
@@ -42,23 +49,26 @@ export const Settings = () => {
     <Container fluid className="p-4">
     <Row>
       <Col>
-        <Alert variant="success">
+        <Alert variant="dark">
           <Alert.Heading>Scouter Selection</Alert.Heading>
-          <Form.Select aria-label="Scouter" onChange={(e) => setScouter(e.target.value)}>
+          <Form.Select aria-label="Scouter selection" onChange={(e) => setScouter(e.target.value)}>
             <option key="0" value="null">Select your name</option>
             {scouters.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
           </Form.Select>
-          Selected scouter: {scouter}
+          Selected scouter id: {scouter}
+          <InputGroup className="mb-3">
+            <Button variant="danger" id="delete-scouter" onClick={deleteScouter}>
+              Delete Selected Scouter
+            </Button>
+            <Button variant="success" id="create-scouter" onClick={createScouter}>
+              Create Scouter
+            </Button>
+            <Form.Control aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
+          </InputGroup>
         </Alert>
-        <InputGroup className="mb-3">
-          <Button variant="outline-secondary" id="add-scouter" onClick={addScouter}>
-            Add Scouter
-          </Button>
-          <Form.Control aria-label="Add scouter" onChange={(e) => setAddScouterName(e.target.value)}/>
-        </InputGroup>
       </Col>
       <Col>
-      <Alert variant="success">
+      <Alert variant="dark">
         <Alert.Heading>Preferences</Alert.Heading>
       </Alert>
       </Col>
