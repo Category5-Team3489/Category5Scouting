@@ -60,7 +60,7 @@ export const Settings = () => {
             <Button variant="success" id="create-scouter" onClick={createScouter}>
               Create Scouter
             </Button>
-            <Form.Control aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
+            <Form.Control placeholder="Scouter's name" aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
           </InputGroup>
           {
             scouter !== "none" ? (
