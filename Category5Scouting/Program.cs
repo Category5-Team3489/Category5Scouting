@@ -1,12 +1,6 @@
-using Category5Scouting;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Text.Json.Nodes;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
