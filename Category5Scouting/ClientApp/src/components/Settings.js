@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { getAllJSDocTags } from 'typescript';
 
 // https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component
 
@@ -33,6 +34,10 @@ export const Settings = () => {
   });
 
   let createScouter = () => {
+    let scouterName = createScouterName.trim();
+    if (!/^[A-Za-z\s]*$/.test(scouterName)) {
+      return;
+    }
     fetch('api/create-scouter?name=' + encodeURIComponent(createScouterName))
     .then(response => response.json())
     .then(data => setScouters(data));
@@ -46,7 +51,7 @@ export const Settings = () => {
   }
 
   return (
-    <Container fluid className="p-4">
+    <Container fluid className="p-4"> {/* p-4 */}
     <Row>
       <Col>
         <Alert variant="dark">
@@ -57,22 +62,22 @@ export const Settings = () => {
           </Form.Select>
           <br />
           <InputGroup className="mb-3">
-            <Button variant="success" id="create-scouter" onClick={createScouter}>
-              Create Scouter
+            <Button variant="outline-success" id="create-scouter" onClick={createScouter}>
+              Create
             </Button>
             <Form.Control placeholder="Scouter's name" aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
           </InputGroup>
           {
             scouter !== "none" ? (
               <InputGroup className="mb-3">
-                <Button variant="danger" id="delete-scouter" onClick={deleteScouter}>
-                  Delete Selected Scouter
+                <Button variant="outline-danger" id="delete-scouter" onClick={deleteScouter}>
+                  Delete Selected
                 </Button>
                 <Form.Control aria-label="Selected scouter id" value={scouter} readOnly/>
               </InputGroup>
             ) : (
-              <Button variant="danger" id="delete-scouter" disabled>
-                Delete Selected Scouter
+              <Button variant="outline-danger" id="delete-scouter" disabled>
+                Delete Selected
               </Button>
             )
           }

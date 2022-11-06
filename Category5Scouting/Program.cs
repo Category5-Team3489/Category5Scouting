@@ -82,7 +82,7 @@ string[] Summaries = new[]
 
 app.MapGet("/api/weatherforecast", () =>
 {
-    return Enumerable.Range(1, 5).Select(index => new WeatherForecast(
+    return Enumerable.Range(1, 50).Select(index => new WeatherForecast(
         DateTime.Now.AddDays(index),
         Random.Shared.Next(-20, 55),
         Summaries[Random.Shared.Next(Summaries.Length)]
