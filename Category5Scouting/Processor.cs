@@ -1,6 +1,4 @@
-﻿using System.Collections.Concurrent;
-
-namespace Category5Scouting;
+﻿namespace Category5Scouting;
 
 public class Processor
 {

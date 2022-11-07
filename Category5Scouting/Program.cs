@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,14 +20,18 @@ app.UseRouting();
 // FIXED: just one /api endpoint, everything uses that
 // app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}");
 
-object scoutersLock = new();
-List<Scouter> scouters = new();
-lock (scoutersLock)
+Processor processor = new();
+var processorTask = processor.BeginProcessing();
+
+processor.Process("Add Default Scouters", (ctx) =>
 {
-    scouters.Add(new Scouter(Guid.NewGuid().ToString(), "Mr. Blake"));
-    scouters.Add(new Scouter(Guid.NewGuid().ToString(), "Ben"));
-    scouters.Add(new Scouter(Guid.NewGuid().ToString(), "Connor"));
-}
+    ctx.scouters.AddRange(new List<Scouter>() {
+        new Scouter(Guid.NewGuid().ToString(), "Mr. Blake"),
+        new Scouter(Guid.NewGuid().ToString(), "Ben"),
+        new Scouter(Guid.NewGuid().ToString(), "Connor")
+    });
+});
+
 
 /*
  *     // Simple POST request with a JSON body using fetch
@@ -41,39 +47,44 @@ lock (scoutersLock)
 
 //https://stackoverflow.com/questions/37230555/get-with-query-string-with-fetch-in-react-native
 
+app.MapGet("/api/end", () =>
+{
+    processor.EndProcessing();
+});
+
 app.MapGet("/api/scouters", () =>
 {
-    lock (scoutersLock)
+    return processor.Process("/scouters", (ctx) =>
     {
-        return scouters;
-    }
+        return ctx.Serialize(ctx.scouters);
+    });
 });
 
 app.MapGet("/api/create-scouter", (string name) => {
 
-    lock (scoutersLock)
+    return processor.Process("/create-scouter", (ctx) =>
     {
-        scouters.Add(new Scouter(Guid.NewGuid().ToString(), name));
-        return scouters;
-    }
+        ctx.scouters.Add(new Scouter(Guid.NewGuid().ToString(), name));
+        return ctx.Serialize(ctx.scouters);
+    });
 });
 
 app.MapGet("/api/delete-scouter", (string id) => {
 
-    lock (scoutersLock)
+    return processor.Process("/delete-scouter", (ctx) =>
     {
-        scouters.RemoveAll(s => s.Id == id);
-        return scouters;
-    }
+        ctx.scouters.RemoveAll(s => s.Id == id);
+        return ctx.Serialize(ctx.scouters);
+    });
 });
-
-string[] Summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
 app.MapGet("/api/weatherforecast", () =>
 {
+    string[] Summaries = new[]
+    {
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    };
+
     return Enumerable.Range(1, 50).Select(index => new WeatherForecast(
         DateTime.Now.AddDays(index),
         Random.Shared.Next(-20, 55),
@@ -83,10 +94,5 @@ app.MapGet("/api/weatherforecast", () =>
 
 app.MapFallbackToFile("index.html");
 
-app.Run();
-
-record Scouter(string Id, string Name);
-record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+var serverTask = app.RunAsync();
+await processorTask;
