@@ -19,7 +19,7 @@ export const Settings = () => {
   ]
   */
 
-  const [scouter, setScouter] = useState("none");
+  const [scouter, setScouter] = useState("null");
 
   const [scouters, setScouters] = useState([]);
 
@@ -44,20 +44,20 @@ export const Settings = () => {
   }
 
   let deleteScouter = () => {
-    setScouter("none");
+    setScouter("null");
     fetch('api/delete-scouter?id=' + encodeURIComponent(scouter))
     .then(response => response.json())
     .then(data => setScouters(data));
   }
 
   return (
-    <Container fluid className="p-4"> {/* p-4 */}
+    <Container fluid className="p-4">
     <Row>
       <Col>
         <Alert variant="dark">
           <Alert.Heading>Scouter Selection</Alert.Heading>
           <Form.Select aria-label="Scouter selection" onChange={(e) => setScouter(e.target.value)}>
-            <option key="none" value="none">Select your name</option>
+            <option key="null" value="null">Select your name</option>
             {scouters.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
           </Form.Select>
           <br />
@@ -68,7 +68,7 @@ export const Settings = () => {
             <Form.Control placeholder="Scouter's name" aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
           </InputGroup>
           {
-            scouter !== "none" ? (
+            scouter !== "null" ? (
               <InputGroup className="mb-3">
                 <Button variant="outline-danger" id="delete-scouter" onClick={deleteScouter}>
                   Delete Selected

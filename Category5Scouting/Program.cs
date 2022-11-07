@@ -15,10 +15,8 @@ app.UseRouting();
 
 // https://stackoverflow.com/questions/68132539/react-ignores-net-5-routing
 // just adding endpoints to setupProxy.js for now
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
-//app.MapControllers();
+// FIXED: just one /api endpoint, everything uses that
+// app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}");
 
 object scoutersLock = new();
 List<Scouter> scouters = new();
