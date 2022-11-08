@@ -19,6 +19,8 @@ export const UsefulLinks = () => {
     { desc: "Passing data between react components", link: "https://www.pluralsight.com/guides/how-to-pass-data-between-react-components" },
     { desc: "Json to array in react", link: "https://www.pluralsight.com/guides/convert-a-json-file-to-an-array-in-react" },
     { desc: "Links in react", link: "https://www.pluralsight.com/guides/understanding-links-in-reactjs" },
+    { desc: "Routing fix", link: "https://stackoverflow.com/questions/68132539/react-ignores-net-5-routing" },
+    { desc: "React api requests", link: "https://stackoverflow.com/questions/37230555/get-with-query-string-with-fetch-in-react-native" },
   ]
 
   return (
