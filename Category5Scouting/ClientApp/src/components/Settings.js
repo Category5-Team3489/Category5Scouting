@@ -38,9 +38,14 @@ export const Settings = () => {
     if (!/^[A-Za-z\s]*$/.test(scouterName)) {
       return;
     }
+    if (scouterName.length < 1) {
+      setCreateScouterName("");
+      return;
+    }
     fetch('api/create-scouter?name=' + encodeURIComponent(createScouterName))
     .then(response => response.json())
     .then(data => setScouters(data));
+    setCreateScouterName("");
   }
 
   let deleteScouter = () => {
@@ -65,7 +70,8 @@ export const Settings = () => {
             <Button variant="outline-success" id="create-scouter" onClick={createScouter}>
               Create
             </Button>
-            <Form.Control placeholder="Scouter's name" aria-label="Create scouter name" onChange={(e) => setCreateScouterName(e.target.value)}/>
+            <Form.Control placeholder="Scouter's name" aria-label="Create scouter name"
+            onChange={(e) => setCreateScouterName(e.target.value)} value={createScouterName}/>
           </InputGroup>
           {
             scouter !== "null" ? (
