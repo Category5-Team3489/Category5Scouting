@@ -8,8 +8,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.UseStaticFiles();
 app.UseRouting();
-// Uncomment if using controllers
-// app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}");
+// app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}"); For controllers
 
 Processor processor = new();
 var processorTask = processor.BeginProcessing();
