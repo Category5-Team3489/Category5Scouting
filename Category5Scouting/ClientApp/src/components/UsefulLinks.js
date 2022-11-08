@@ -7,8 +7,6 @@ import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-// https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component
-
 export const UsefulLinks = () => {
   const links = [
     { desc: "How to use react hooks to do things on init, update, and uninit", link: "https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component" },
@@ -21,6 +19,8 @@ export const UsefulLinks = () => {
     { desc: "Links in react", link: "https://www.pluralsight.com/guides/understanding-links-in-reactjs" },
     { desc: "Routing fix", link: "https://stackoverflow.com/questions/68132539/react-ignores-net-5-routing" },
     { desc: "React api requests", link: "https://stackoverflow.com/questions/37230555/get-with-query-string-with-fetch-in-react-native" },
+    { desc: "React hooks", link: "https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component" },
+    { desc: "React hooks playing sound", link: "https://reactjsexample.com/a-react-hook-for-playing-sound-effects/" },
   ]
 
   return (

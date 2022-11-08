@@ -8,6 +8,7 @@ public class Processor
 
     private readonly ProcessorContext context = new();
 
+    #region Process Methods
     public async Task<T> ProcessAsync<T>(string debugInfo, Func<ProcessorContext, Task<T>> task)
     {
         TaskCompletionSource<T> tcs = new();
@@ -117,6 +118,7 @@ public class Processor
         }));
         mres.Wait();
     }
+    #endregion Process Methods
 
     public async Task BeginProcessing()
     {

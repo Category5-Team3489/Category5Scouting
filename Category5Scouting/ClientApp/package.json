@@ -16,6 +16,7 @@
     "react-scripts": "^4.0.3",
     "reactstrap": "^8.9.0",
     "rimraf": "^2.6.2",
+    "use-sound": "^4.0.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.3",
     "workbox-broadcast-update": "^5.1.3",

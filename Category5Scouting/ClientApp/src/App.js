@@ -7,6 +7,7 @@ import { Counter } from './components/Counter';
 import { Settings } from './components/Settings';
 import { UsefulLinks } from './components/UsefulLinks';
 import { Scout } from './components/Scout';
+import { Clicker } from './components/Clicker';
 
 import './custom.css'
 
@@ -22,6 +23,7 @@ export default class App extends Component {
         <Route path='/settings' component={Settings} />
         <Route path='/useful-links' component={UsefulLinks} />
         <Route path='/scout' component={Scout} />
+        <Route path='/clicker' component={Clicker} />
       </Layout>
     );
   }
