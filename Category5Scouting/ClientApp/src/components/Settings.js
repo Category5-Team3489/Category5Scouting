@@ -53,7 +53,7 @@ export const Settings = () => {
   return (
     <Container fluid className="p-4">
     <Row>
-      <Col>
+      <Col sm={8}>
         <Alert variant="dark">
           <Alert.Heading>Scouter Selection</Alert.Heading>
           <Form.Select aria-label="Scouter selection" onChange={(e) => setScouter(e.target.value)}>
@@ -83,10 +83,28 @@ export const Settings = () => {
           }
         </Alert>
       </Col>
-      <Col>
-      <Alert variant="dark">
-        <Alert.Heading>Preferences</Alert.Heading>
-      </Alert>
+      <Col sm={4}>
+        <Alert variant="dark">
+          <Alert.Heading>Preferences</Alert.Heading>
+          <Alert variant="primary">
+            <Alert.Heading>1</Alert.Heading>
+          </Alert>
+          <Alert variant="primary">
+            <Alert.Heading>2</Alert.Heading>
+          </Alert>
+          <Alert variant="primary">
+            <Alert.Heading>3</Alert.Heading>
+          </Alert>
+          <Alert variant="danger">
+            <Alert.Heading>1</Alert.Heading>
+          </Alert>
+          <Alert variant="danger">
+            <Alert.Heading>2</Alert.Heading>
+          </Alert>
+          <Alert variant="danger">
+            <Alert.Heading>3</Alert.Heading>
+          </Alert>
+        </Alert>
       </Col>
     </Row>
     </Container>

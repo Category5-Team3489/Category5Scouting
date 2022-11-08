@@ -36,15 +36,18 @@ export class NavMenu extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-              <LinkContainer to="/counter">
-                <Nav.Link>Counter</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/fetch-data">
-                <Nav.Link>Fetch data</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/useful-links">
-                <Nav.Link>Useful links</Nav.Link>
-              </LinkContainer>
+                <LinkContainer to="/counter">
+                  <Nav.Link>Counter</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/fetch-data">
+                  <Nav.Link>Fetch data</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/useful-links">
+                  <Nav.Link>Useful links</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/scout">
+                  <Nav.Link>Scout</Nav.Link>
+                </LinkContainer>
               </Nav>
               <Nav>
                 <LinkContainer to="/settings">

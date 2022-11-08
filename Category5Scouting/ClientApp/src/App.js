@@ -6,6 +6,7 @@ import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Settings } from './components/Settings';
 import { UsefulLinks } from './components/UsefulLinks';
+import { Scout } from './components/Scout';
 
 import './custom.css'
 
@@ -20,6 +21,7 @@ export default class App extends Component {
         <Route path='/fetch-data' component={FetchData} />
         <Route path='/settings' component={Settings} />
         <Route path='/useful-links' component={UsefulLinks} />
+        <Route path='/scout' component={Scout} />
       </Layout>
     );
   }
