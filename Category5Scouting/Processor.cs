@@ -42,6 +42,40 @@ public class Processor
         }));
         await tcs.Task;
     }
+    public async Task<T> ProcessAsync<T>(string debugInfo, Func<ProcessorContext, T> task)
+    {
+        TaskCompletionSource<T> tcs = new();
+        queue.Enqueue(new ProcessingFunc((ctx) =>
+        {
+            try
+            {
+                T output = task(ctx);
+                tcs.SetResult(output);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"[Processor ERROR] {debugInfo}: {e}");
+            }
+        }));
+        return await tcs.Task;
+    }
+    public async Task ProcessAsync(string debugInfo, Action<ProcessorContext> task)
+    {
+        TaskCompletionSource tcs = new();
+        queue.Enqueue(new ProcessingFunc((ctx) =>
+        {
+            try
+            {
+                task(ctx);
+                tcs.SetResult();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"[Processor ERROR] {debugInfo}: {e}");
+            }
+        }));
+        await tcs.Task;
+    }
 
     public T Process<T>(string debugInfo, Func<ProcessorContext, T> task)
     {
