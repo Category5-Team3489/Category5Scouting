@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,16 +6,9 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-}
-
 app.UseStaticFiles();
 app.UseRouting();
-
-// https://stackoverflow.com/questions/68132539/react-ignores-net-5-routing
-// just adding endpoints to setupProxy.js for now
-// FIXED: just one /api endpoint, everything uses that
+// Uncomment if using controllers
 // app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}");
 
 Processor processor = new();
@@ -32,21 +23,7 @@ processor.Process("Add Default Scouters", (ctx) =>
     });
 });
 
-
-/*
- *     // Simple POST request with a JSON body using fetch
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: 'React POST Request Example' })
-    };
-    fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
-        .then(response => response.json())
-        .then(data => this.setState({ postId: data.id }));
- */
-
-//https://stackoverflow.com/questions/37230555/get-with-query-string-with-fetch-in-react-native
-
+#region Endpoints
 app.MapGet("/api/end", () =>
 {
     processor.EndProcessing();
@@ -91,6 +68,7 @@ app.MapGet("/api/weatherforecast", () =>
         Summaries[Random.Shared.Next(Summaries.Length)]
     ));
 });
+#endregion Endpoints
 
 app.MapFallbackToFile("index.html");
 
