@@ -21,6 +21,7 @@ export const UsefulLinks = () => {
     { desc: "React api requests", link: "https://stackoverflow.com/questions/37230555/get-with-query-string-with-fetch-in-react-native" },
     { desc: "React hooks", link: "https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component" },
     { desc: "React hooks playing sound", link: "https://reactjsexample.com/a-react-hook-for-playing-sound-effects/" },
+    { desc: "Disable tab over for a button", link: "https://stackoverflow.com/questions/58253393/how-to-disable-tab-button-for-specific-inputs-in-reactjs" },
   ]
 
   return (

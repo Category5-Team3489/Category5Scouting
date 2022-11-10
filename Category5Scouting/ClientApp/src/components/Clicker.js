@@ -13,8 +13,15 @@ import clickSfx from '../sounds/click.wav';
 export const Clicker = () => {
   const [clickSound] = useSound(clickSfx);
 
-  let click = () => {
+  const [cookies, setCookies] = useState(0);
+
+  let click = (e) => {
+    console.log(e);
+    if (e.nativeEvent.pointerType !== "mouse") {
+      return;
+    }
     clickSound();
+    setCookies(cookies + 1);
   }
 
   return (
@@ -24,11 +31,14 @@ export const Clicker = () => {
           <Alert variant="dark">
             <Alert.Heading>Clicker</Alert.Heading>
             <div className="d-grid gap-2">
-              <Button variant="secondary" size="lg" onClick={click}>
+              <Button variant="secondary" size="lg" onClick={(e) => click(e)} type="button">
                 🍪
               </Button>
-              <InputGroup className="mb-3" size="lg">
-                <Form.Control aria-label="Cookies" readOnly/>
+              <InputGroup size="lg">
+                <InputGroup.Text>
+                  Cookies
+                </InputGroup.Text>
+                <Form.Control aria-label="Cookie count" readOnly value={cookies}/>
               </InputGroup>
             </div>
           </Alert>
