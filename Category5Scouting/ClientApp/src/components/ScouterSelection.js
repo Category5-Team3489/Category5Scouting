@@ -55,6 +55,7 @@ export function ScouterSelection( {scouterIdState, scouterNameState} ) {
     scouterNameState.set(name);
   }
 
+  // Set the scouter id and name when a scouter is selected
   let selectScouter = (id) => {
     let findName = scouters.find(scouter => scouter.id === id);
     if (findName != undefined) {

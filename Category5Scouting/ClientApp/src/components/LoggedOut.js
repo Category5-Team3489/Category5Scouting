@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 export function LoggedOut( {state} ) {
   //const history = useHistory();
 
-  // Go to home page on logged out page load
+  // Go to home page when this loads
   /*
   useEffect(() => {
     history.push("/")
@@ -15,17 +15,15 @@ export function LoggedOut( {state} ) {
   */
 
   return (
-    <Container fluid className="p-4">
+    <Container className="p-4">
       <Alert className="mb-3" variant="danger">
         <Alert.Heading>3489 Scouting App</Alert.Heading>
         Please select your name from the dropdown below
       </Alert>
       
-      <div className="mb-3">
-        <ScouterSelection
-        scouterIdState={state.scouterIdState}
-        scouterNameState={state.scouterNameState}/>
-      </div>
+      <ScouterSelection
+      scouterIdState={state.scouterIdState}
+      scouterNameState={state.scouterNameState}/>
     </Container>
   );
 };

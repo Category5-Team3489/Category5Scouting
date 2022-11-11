@@ -9,6 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { ScouterSelection } from './ScouterSelection';
 
 export function Settings( {state} ) {
+  // Shuts down the server
   let shutdown = () => {
     fetch('api/end');
   }

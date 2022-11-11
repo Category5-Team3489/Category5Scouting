@@ -3,14 +3,17 @@ import Container from 'react-bootstrap/Container';
 
 export function WeatherForecast() {
   
+  // Hook to store the weather data
   const [forecasts, setForcasts] = useState([]);
 
+  // Hook to get the weather data on load
   useEffect(() => {
     fetch('api/weatherforecast')
       .then(response => response.json())
       .then(data => setForcasts(data));
   }, []);
 
+  // Render the weather data
   let renderForecastsTable = (forecasts) => {
     return (
       <table className='table table-striped' aria-labelledby="tabelLabel">

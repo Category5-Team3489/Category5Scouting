@@ -11,12 +11,17 @@ import useSound from 'use-sound';
 import clickSfx from '../sounds/click.wav';
 
 export const Clicker = () => {
+  // Hook for click sound
   const [clickSound] = useSound(clickSfx);
 
+  // Hook for cookie count
   const [cookies, setCookies] = useState(0);
 
+  // runs when cookie button is clicked
+  // returns if wasnt clicked by a mouse, ie: hover and holding enter
+  // plays the click sound
+  // adds 1 cookie to the cookie count
   let click = (e) => {
-    console.log(e);
     if (e.nativeEvent.pointerType !== "mouse") {
       return;
     }
