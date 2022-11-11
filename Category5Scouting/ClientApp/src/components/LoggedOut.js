@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import { ScouterSelection } from './ScouterSelection';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
-//import { useNavigate } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 export function LoggedOut( {state} ) {
-  //const navigate = useNavigate();
+  //const history = useHistory();
 
+  // Go to home page on logged out page load
   /*
   useEffect(() => {
-    navigate("/");
+    history.push("/")
   }, []);
   */
 
