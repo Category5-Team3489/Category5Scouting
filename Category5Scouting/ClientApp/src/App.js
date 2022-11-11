@@ -23,12 +23,12 @@ export default function App() {
   const scouterIdState = new StateHook("");
   const scouterNameState = new StateHook("");
 
-  const isLoggedIn = () => scouterIdState.get() !== "";
+  let isLoggedOut = () => scouterIdState.get() === "";
   
   return (
     <>
       {
-        isLoggedIn() ? (
+        isLoggedOut() ? (
           <Settings
             scouterIdState={scouterIdState}
             scouterNameState={scouterNameState}
