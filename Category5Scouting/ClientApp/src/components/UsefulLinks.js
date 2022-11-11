@@ -31,7 +31,7 @@ export const UsefulLinks = () => {
   ]
 
   return (
-    <>
+    <Container className="p-4">
       <h1>Useful Links</h1>
       <h6>These open in a new tab</h6>
       <ul>
@@ -43,6 +43,6 @@ export const UsefulLinks = () => {
           </li>
         )}
       </ul>
-    </>
+    </Container>
   );
 };

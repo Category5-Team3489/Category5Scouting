@@ -1,16 +1,6 @@
 import React, { useState, Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-import { Settings } from './components/Settings';
-import { UsefulLinks } from './components/UsefulLinks';
-import { Scout } from './components/Scout';
-import { Clicker } from './components/Clicker';
-import Alert from 'react-bootstrap/Alert';
-
-import './custom.css'
+import { LoggedOut } from './components/LoggedOut';
+import { LoggedIn } from './components/LoggedIn';
 
 export default function App() {
 
@@ -19,35 +9,23 @@ export default function App() {
     this.get = () => state;
     this.set = (newState) => setState(newState);
   }
-  
-  const scouterIdState = new StateHook("");
-  const scouterNameState = new StateHook("");
 
-  let isLoggedOut = () => scouterIdState.get() === "";
+  function State() {
+    this.scouterIdState = new StateHook("");
+    this.scouterNameState = new StateHook("");
+  }
+  
+  const state = new State();
+
+  let isLoggedOut = () => state.scouterIdState.get() === "";
   
   return (
     <>
       {
         isLoggedOut() ? (
-          <Settings
-            scouterIdState={scouterIdState}
-            scouterNameState={scouterNameState}
-          />
+          <LoggedOut state={state}/>
         ) : (
-          <Layout>
-            <Route exact path='/' component={Home} />
-            <Route path='/counter' component={Counter} />
-            <Route path='/fetch-data' component={FetchData} />
-            <Route path='/settings'>
-              <Settings
-                scouterIdState={scouterIdState}
-                scouterNameState={scouterNameState}
-              />
-            </Route>
-            <Route path='/useful-links' component={UsefulLinks} />
-            <Route path='/scout' component={Scout} />
-            <Route path='/clicker' component={Clicker} />
-          </Layout>
+          <LoggedIn state={state}/>
         )
       }
     </>
