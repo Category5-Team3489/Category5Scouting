@@ -7,7 +7,7 @@ import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-export const Settings = () => {
+export function Settings( {scouterIdState, scouterNameState} ) {
   /*
   const scouters = [
     { id: "1", name: "Mr. Blake" },
@@ -15,8 +15,6 @@ export const Settings = () => {
     { id: "3", name: "Connor" }
   ]
   */
-
-  const [scouter, setScouter] = useState("null");
 
   const [scouters, setScouters] = useState([]);
 
@@ -32,7 +30,7 @@ export const Settings = () => {
 
   let createScouter = () => {
     let scouterName = createScouterName.trim();
-    if (!/^[A-Za-z\s]*$/.test(scouterName)) {
+    if (!/^[A-Za-z\s]*$/.test(scouterName) || scouterName.length > 24) {
       return;
     }
     if (scouterName.length < 1) {
@@ -46,10 +44,19 @@ export const Settings = () => {
   }
 
   let deleteScouter = () => {
-    setScouter("null");
-    fetch('api/delete-scouter?id=' + encodeURIComponent(scouter))
+    let scouterId = scouterIdState.get();
+    if (scouterId === "") {
+      return;
+    }
+    setScouter("", "");
+    fetch('api/delete-scouter?id=' + encodeURIComponent(scouterId))
       .then(response => response.json())
       .then(data => setScouters(data));
+  }
+
+  let setScouter = (id, name) => {
+    scouterIdState.set(id);
+    scouterNameState.set(name);
   }
 
   let shutdown = () => {
@@ -62,11 +69,18 @@ export const Settings = () => {
         <Col sm={8}>
           <Alert variant="dark">
             <Alert.Heading>Scouter Selection</Alert.Heading>
-            <Form.Select aria-label="Scouter selection" onChange={(e) => setScouter(e.target.value)}>
-              <option key="null" value="null">Select your name</option>
-              {scouters.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+            <Form.Select className="mb-3" aria-label="Scouter selection"
+              onChange={(e) => {
+                let id = e.target.value;
+                let nameSearch = scouters.find(scouter => scouter.id === e.target.value);
+                let name = nameSearch == undefined ? "" : nameSearch.name;
+                setScouter(id, name);
+              }}
+              value={scouterIdState.get()}
+            >
+              <option key="" value="">Select your name</option>
+              {scouters.map((scouter) => <option key={scouter.id} value={scouter.id}>{scouter.name}</option>)}
             </Form.Select>
-            <br />
             <InputGroup className="mb-3">
               <Button variant="outline-success" id="create-scouter" onClick={createScouter}>
                 Create
@@ -75,12 +89,12 @@ export const Settings = () => {
               onChange={(e) => setCreateScouterName(e.target.value)} value={createScouterName}/>
             </InputGroup>
             {
-              scouter !== "null" ? (
+              scouterIdState.get() !== "" ? (
                 <InputGroup className="mb-3">
                   <Button variant="outline-danger" id="delete-scouter" onClick={deleteScouter}>
                     Delete Selected
                   </Button>
-                  <Form.Control aria-label="Selected scouter id" value={scouter} readOnly/>
+                  <Form.Control aria-label="Selected scouter id" value={scouterIdState.get()} readOnly/>
                 </InputGroup>
               ) : (
                 <Button variant="outline-danger" id="delete-scouter" disabled>

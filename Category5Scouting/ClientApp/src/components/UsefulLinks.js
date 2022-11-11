@@ -22,6 +22,12 @@ export const UsefulLinks = () => {
     { desc: "React hooks", link: "https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component" },
     { desc: "React hooks playing sound", link: "https://reactjsexample.com/a-react-hook-for-playing-sound-effects/" },
     { desc: "Disable tab over for a button", link: "https://stackoverflow.com/questions/58253393/how-to-disable-tab-button-for-specific-inputs-in-reactjs" },
+    { desc: "React sharing state between components", link: "https://beta.reactjs.org/learn/sharing-state-between-components" },
+    { desc: "JS Prototypes", link: "https://www.w3schools.com/js/js_object_prototypes.asp" },
+    { desc: "JS Methods", link: "https://www.w3schools.com/js/js_object_methods.asp" },
+    { desc: "JS Classes", link: "https://www.w3schools.com/js/js_classes.asp" },
+    { desc: "React hooks docs", link: "https://reactjs.org/docs/hooks-reference.html#usestate" },
+    { desc: "Exporting stuff", link: "https://stackoverflow.com/questions/53328408/receiving-attempted-import-error-in-react-app" },
   ]
 
   return (
