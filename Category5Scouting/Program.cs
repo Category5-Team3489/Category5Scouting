@@ -71,5 +71,5 @@ app.MapGet("/api/weatherforecast", () =>
 
 app.MapFallbackToFile("index.html");
 
-var serverTask = app.RunAsync();
+var serverTask = app.RunAsync(); //"http://*:6567"
 await processorTask;

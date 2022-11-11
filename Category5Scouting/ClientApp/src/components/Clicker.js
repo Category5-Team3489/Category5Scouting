@@ -31,7 +31,7 @@ export const Clicker = () => {
           <Alert variant="dark">
             <Alert.Heading>Clicker</Alert.Heading>
             <div className="d-grid gap-2">
-              <Button variant="secondary" size="lg" onClick={(e) => click(e)} type="button">
+              <Button variant="secondary" size="lg" onClick={(e) => click(e)}>
                 🍪
               </Button>
               <InputGroup size="lg">
