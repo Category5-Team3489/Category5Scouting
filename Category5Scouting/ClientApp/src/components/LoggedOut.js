@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
-import { ScouterSelection } from './ScouterSelection';
+import React from 'react';
+
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
-//import { useHistory } from "react-router-dom";
+
+import { ScouterSelection } from './ScouterSelection';
 
 export function LoggedOut( {state} ) {
-  //const history = useHistory();
-
-  // Go to home page when this loads
-  // Possibly not wanted because someone may hit refresh, and expect to stay on their current page
-  /*
-  useEffect(() => {
-    history.push("/")
-  }, []);
-  */
-
   return (
     <Container className="p-4">
       <Alert className="mb-3" variant="danger">

@@ -1,23 +1,24 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
+
 import { LoggedOut } from './components/LoggedOut';
 import { LoggedIn } from './components/LoggedIn';
 
 export default function App() {
 
-  // Returns a prototype object with a hook that have a get and set function
+  // Returns a prototype object with get and set methods that access a hook
   function StateHook(initialState) {
     const [state, setState] = useState(initialState);
     this.get = () => state;
     this.set = (newState) => setState(newState);
   }
 
-  // Returns a prototype object with all of the state for the app
+  // Returns a prototype object with all of the top level state for the app
   function State() {
     this.scouterIdState = new StateHook("");
     this.scouterNameState = new StateHook("");
   }
   
-  // Create a state object
+  // Create state object
   const state = new State();
 
   // Returns true if the user is logged out
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <>
       {
+        // Conditionally render the logged in or logged out
         isLoggedOut() ? (
           <LoggedOut state={state}/>
         ) : (

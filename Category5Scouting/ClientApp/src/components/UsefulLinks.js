@@ -1,11 +1,4 @@
-import React, { useEffect, useState, Component } from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Alert from 'react-bootstrap/Alert';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 
 export const UsefulLinks = () => {
   const links = [
@@ -30,7 +23,8 @@ export const UsefulLinks = () => {
     { desc: "Exporting stuff", link: "https://stackoverflow.com/questions/53328408/receiving-attempted-import-error-in-react-app" },
     { desc: "React bootstrap list group", link: "https://react-bootstrap.github.io/components/list-group/" },
     { desc: "React js hook run code on an interval", link: "https://stackoverflow.com/questions/65049812/how-to-call-a-function-every-minute-in-a-react-component" },
-    
+    { desc: "Force react to route to a page", link: "https://stackoverflow.com/questions/64224629/importerror-usenavigate-is-not-exported-from-react-router-dom" },
+
   ]
 
   return (
@@ -38,6 +32,7 @@ export const UsefulLinks = () => {
       <h1>Useful Links</h1>
       <h6>These open in a new tab</h6>
       <ul>
+        {/* Map the links to elements in an unordered list */}
         {links.map((l) => 
           <li key={l.link}>
             <a href={l.link} rel="noopener noreferrer" target="_blank">

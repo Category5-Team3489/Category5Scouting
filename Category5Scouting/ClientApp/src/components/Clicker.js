@@ -1,4 +1,6 @@
-import React, { useEffect, useState, Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import useSound from 'use-sound';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import useSound from 'use-sound';
 import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
 
@@ -14,7 +15,7 @@ import clickSfx from '../sounds/click.wav';
 
 export const Clicker = ( {state} ) => {
   // Hook for click sound
-  const [clickSound] = useSound(clickSfx);
+  const [playClickSound] = useSound(clickSfx);
 
   // Hook for cookie count
   const [cookies, setCookies] = useState(0);
@@ -22,17 +23,21 @@ export const Clicker = ( {state} ) => {
   // Hook for leaderboard
   const [leaderboard, setLeaderboard] = useState([]);
 
+  // Loads the leaderboard
   let loadLeaderboard = () => {
-    fetch('/api/cookie-leaderboard')
+    // Execute the api request and load the leaderboard that the request returns
+    fetch("/api/clicker/leaderboard")
       .then(response => response.json())
       .then(data => setLeaderboard(data));
   }
 
+  // Load the leaderboard on start
   useEffect(() => {
     loadLeaderboard();
   }, []);
 
   useEffect(() => {
+    // Reload leaderboard every 1000ms (1 second)
     const interval = setInterval(() => {
       loadLeaderboard();
     }, 1000);
@@ -40,23 +45,24 @@ export const Clicker = ( {state} ) => {
     return () => clearInterval(interval);
   }, []);
 
-  // Hook to get cookie count on load
+  // Hook to get a scouter's cookie count on start with the given scouter id
   useEffect(() => {
-    fetch('api/get-cookies?id=' + encodeURIComponent(state.scouterIdState.get()))
+    // Execute the api request and load the cookie count that the request returns
+    fetch("api/clicker/cookies?id=" + encodeURIComponent(state.scouterIdState.get()))
       .then(response => response.json())
       .then(data => setCookies(data));
-  }, []);
+  }, [state.scouterIdState]);
 
-  // runs when cookie button is clicked
-  // returns if wasnt clicked by a mouse, ie: hover and holding enter
-  // plays the click sound
-  // adds 1 cookie to the cookie count
-  let click = (e) => {
-    if (e.nativeEvent.pointerType !== "mouse") {
+  // Handles the cookie click
+  let clickCookie = (e) => {
+    // Only allows clicks that came from a mouse or a touch, not holding enter
+    if (e.nativeEvent.pointerType !== "mouse" && e.nativeEvent.pointerType !== "touch") {
       return;
     }
-    clickSound();
-    fetch('api/clicked-cookie?id=' + encodeURIComponent(state.scouterIdState.get()))
+    // Plays the click sound
+    playClickSound();
+    // Execute the api request and load the cookie count that the request returns
+    fetch("api/clicker/clicked?id=" + encodeURIComponent(state.scouterIdState.get()))
       .then(response => response.json())
       .then(data => setCookies(data));
   }
@@ -68,7 +74,8 @@ export const Clicker = ( {state} ) => {
           <Alert variant="dark">
             <Alert.Heading>Clicker</Alert.Heading>
             <div className="d-grid gap-2">
-              <Button variant="secondary" size="lg" onClick={(e) => click(e)}>
+              {/* When button is pressed handle the cookie click */}
+              <Button variant="secondary" size="lg" onClick={(e) => clickCookie(e)}>
                 🍪
               </Button>
               <InputGroup size="lg">
@@ -85,6 +92,7 @@ export const Clicker = ( {state} ) => {
             <Alert.Heading>Leaderboard</Alert.Heading>
             <ListGroup as="ol" numbered>
               {
+                // Map the leaderboard data to visuals
                 leaderboard.map((item, index) => {
                   return (
                     <ListGroup.Item key={index} as="li"

@@ -13,7 +13,7 @@ app.UseRouting();
 // app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}"); For controllers
 
 Processor processor = new();
-var processorTask = processor.BeginProcessing();
+var processorTask = processor.RunAsync();
 
 processor.Process("Add Default Scouters", (ctx) =>
 {
@@ -25,40 +25,41 @@ processor.Process("Add Default Scouters", (ctx) =>
 });
 
 #region Endpoints
-app.MapGet("/api/end", () =>
+app.MapGet("/api/stop", () =>
 {
-    processor.EndProcessing();
+    processor.Stop();
 });
 
-app.MapGet("/api/scouters", () =>
+app.MapGet("/api/scouter/list", () =>
 {
-    return processor.Process("/scouters", (ctx) =>
+    return processor.Process("/api/scouter/list", (ctx) =>
     {
         return ctx.Serialize(ctx.scouters);
     });
 });
 
-app.MapGet("/api/create-scouter", (string name) => {
+app.MapGet("/api/scouter/create", (string name) => {
 
-    return processor.Process("/create-scouter", (ctx) =>
+    return processor.Process("/api/scouter/create", (ctx) =>
     {
-        ctx.scouters.Add(new Scouter(Guid.NewGuid().ToString(), name));
+        Scouter scouter = new(Guid.NewGuid().ToString(), name);
+        ctx.scouters.Add(scouter);
         return ctx.Serialize(ctx.scouters);
     });
 });
 
-app.MapGet("/api/delete-scouter", (string id) => {
+app.MapGet("/api/scouter/delete", (string id) => {
 
-    return processor.Process("/delete-scouter", (ctx) =>
+    return processor.Process("/api/scouter/delete", (ctx) =>
     {
         ctx.scouters.RemoveAll(s => s.Id == id);
         return ctx.Serialize(ctx.scouters);
     });
 });
 
-app.MapGet("/api/clicked-cookie", (string id) =>
+app.MapGet("/api/clicker/clicked", (string id) =>
 {
-    return processor.Process("/clicked-cookie", (ctx) =>
+    return processor.Process("/api/clicker/clicked", (ctx) =>
     {
         var scouter = ctx.scouters.Find(scouter => scouter.Id == id);
         if (scouter is not null)
@@ -69,9 +70,9 @@ app.MapGet("/api/clicked-cookie", (string id) =>
     });
 });
 
-app.MapGet("/api/get-cookies", (string id) =>
+app.MapGet("/api/clicker/cookies", (string id) =>
 {
-    return processor.Process("/get-cookies", (ctx) =>
+    return processor.Process("/api/clicker/cookies", (ctx) =>
     {
         if (ctx.scouters.Any(scouter => scouter.Id == id))
         {
@@ -81,9 +82,9 @@ app.MapGet("/api/get-cookies", (string id) =>
     });
 });
 
-app.MapGet("/api/cookie-leaderboard", () =>
+app.MapGet("/api/clicker/leaderboard", () =>
 {
-    return processor.Process("/get-cookies", (ctx) =>
+    return processor.Process("/api/clicker/leaderboard", (ctx) =>
     {
         var leaderboard = ctx.cookieClickerManager.GetLeaderboard();
         return ctx.Serialize(leaderboard);

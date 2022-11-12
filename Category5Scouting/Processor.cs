@@ -120,7 +120,7 @@ public class Processor
     }
     #endregion Process Methods
 
-    public async Task BeginProcessing()
+    public async Task RunAsync()
     {
         isProcessing = true;
         while (isProcessing)
@@ -140,7 +140,7 @@ public class Processor
             await Task.Delay(1);
         }
     }
-    public void EndProcessing()
+    public void Stop()
     {
         isProcessing = false;
     }

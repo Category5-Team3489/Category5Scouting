@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap'
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { LinkContainer } from 'react-router-bootstrap'
 
 export function Menu() {
   return (
@@ -20,8 +18,8 @@ export function Menu() {
           <Navbar.Collapse id="responsive-navbar-nav">
           
           <Nav className="me-auto">
-            <LinkContainer to="/fetch-data">
-              <Nav.Link>Fetch data</Nav.Link>
+            <LinkContainer to="/weather-forecast">
+              <Nav.Link>Weather forecast</Nav.Link>
             </LinkContainer>
 
             <LinkContainer to="/useful-links">

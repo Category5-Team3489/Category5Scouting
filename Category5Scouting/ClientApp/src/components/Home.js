@@ -1,5 +1,6 @@
-import { Alert } from 'react-bootstrap';
-import React, { useState, Component } from 'react';
+import React from 'react';
+
+import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 
 export function Home() {
