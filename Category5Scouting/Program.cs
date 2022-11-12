@@ -1,9 +1,7 @@
-using System.Diagnostics;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+// builder.Services.AddControllersWithViews(); For controllers
 
 var app = builder.Build();
 
@@ -74,6 +72,7 @@ app.MapGet("/api/clicker/cookies", (string id) =>
 {
     return processor.Process("/api/clicker/cookies", (ctx) =>
     {
+        // TODO make method to check if scouter with id exists
         if (ctx.scouters.Any(scouter => scouter.Id == id))
         {
             return ctx.cookieClickerManager.GetCookies(id);
