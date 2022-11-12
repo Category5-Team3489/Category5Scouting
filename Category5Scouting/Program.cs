@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -54,7 +56,41 @@ app.MapGet("/api/delete-scouter", (string id) => {
     });
 });
 
-app.MapGet("/api/weatherforecast", () =>
+app.MapGet("/api/clicked-cookie", (string id) =>
+{
+    return processor.Process("/clicked-cookie", (ctx) =>
+    {
+        var scouter = ctx.scouters.Find(scouter => scouter.Id == id);
+        if (scouter is not null)
+        {
+            return ctx.cookieClickerManager.Click(scouter.Id, scouter.Name);
+        }
+        return 0ul;
+    });
+});
+
+app.MapGet("/api/get-cookies", (string id) =>
+{
+    return processor.Process("/get-cookies", (ctx) =>
+    {
+        if (ctx.scouters.Any(scouter => scouter.Id == id))
+        {
+            return ctx.cookieClickerManager.GetCookies(id);
+        }
+        return 0ul;
+    });
+});
+
+app.MapGet("/api/cookie-leaderboard", () =>
+{
+    return processor.Process("/get-cookies", (ctx) =>
+    {
+        var leaderboard = ctx.cookieClickerManager.GetLeaderboard();
+        return ctx.Serialize(leaderboard);
+    });
+});
+
+app.MapGet("/api/weather-forecast", () =>
 {
     string[] Summaries = new[]
     {

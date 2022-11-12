@@ -8,6 +8,7 @@ export function LoggedOut( {state} ) {
   //const history = useHistory();
 
   // Go to home page when this loads
+  // Possibly not wanted because someone may hit refresh, and expect to stay on their current page
   /*
   useEffect(() => {
     history.push("/")

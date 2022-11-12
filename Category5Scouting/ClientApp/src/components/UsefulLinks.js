@@ -28,6 +28,9 @@ export const UsefulLinks = () => {
     { desc: "JS Classes", link: "https://www.w3schools.com/js/js_classes.asp" },
     { desc: "React hooks docs", link: "https://reactjs.org/docs/hooks-reference.html#usestate" },
     { desc: "Exporting stuff", link: "https://stackoverflow.com/questions/53328408/receiving-attempted-import-error-in-react-app" },
+    { desc: "React bootstrap list group", link: "https://react-bootstrap.github.io/components/list-group/" },
+    { desc: "React js hook run code on an interval", link: "https://stackoverflow.com/questions/65049812/how-to-call-a-function-every-minute-in-a-react-component" },
+    
   ]
 
   return (

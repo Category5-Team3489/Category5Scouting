@@ -8,7 +8,7 @@ export function WeatherForecast() {
 
   // Hook to get the weather data on load
   useEffect(() => {
-    fetch('api/weatherforecast')
+    fetch('api/weather-forecast')
       .then(response => response.json())
       .then(data => setForcasts(data));
   }, []);

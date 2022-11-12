@@ -21,7 +21,9 @@ export function LoggedIn( {state} ) {
       </Route>
       <Route path='/useful-links' component={UsefulLinks} />
       <Route path='/scout' component={Scout} />
-      <Route path='/clicker' component={Clicker} />
+      <Route path='/clicker'>
+        <Clicker state={state} />
+      </Route>
     </>
   );
 };
