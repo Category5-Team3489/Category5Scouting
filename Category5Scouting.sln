@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Category5Scouting", "Category5Scouting\Category5Scouting.csproj", "{BA3648BA-91F9-45DA-96EF-3D70757D9090}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Category5Scouting", "Category5Scouting\Category5Scouting.csproj", "{693D33D9-6355-4755-AB9E-0DC13C531A24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA3648BA-91F9-45DA-96EF-3D70757D9090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA3648BA-91F9-45DA-96EF-3D70757D9090}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA3648BA-91F9-45DA-96EF-3D70757D9090}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA3648BA-91F9-45DA-96EF-3D70757D9090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693D33D9-6355-4755-AB9E-0DC13C531A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693D33D9-6355-4755-AB9E-0DC13C531A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693D33D9-6355-4755-AB9E-0DC13C531A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693D33D9-6355-4755-AB9E-0DC13C531A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CCC45FFC-0765-4694-9F9C-A0EF3DDACC5E}
+		SolutionGuid = {F03E1A15-CE50-4E00-9E21-1C0E8F1E4AF7}
 	EndGlobalSection
 EndGlobal
