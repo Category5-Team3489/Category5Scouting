@@ -7,16 +7,17 @@ public class ProcessorContext
     public readonly List<Scouter> scouters = new();
     public readonly CookieClickerManager cookieClickerManager = new();
 
-    private bool isInit = false;
+    public void Start()
+    {
+        // Start code
+    }
     public void Update()
     {
-        if (!isInit)
-        {
-            isInit = true;
-            // Init code
-        }
-
         // Update code
+    }
+    public void Stop()
+    {
+        // Stop code
     }
 
     public string Serialize<TValue>(TValue value)

@@ -123,6 +123,7 @@ public class Processor
     public async Task RunAsync()
     {
         isProcessing = true;
+        context.Start();
         while (isProcessing)
         {
             int count = queue.Count;
@@ -142,6 +143,10 @@ public class Processor
     }
     public void Stop()
     {
+        Process("stop", (ctx) =>
+        {
+            ctx.Stop();
+        });
         isProcessing = false;
     }
 
