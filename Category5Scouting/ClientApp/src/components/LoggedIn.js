@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { Clicker } from './Clicker';
 import { Home } from './Home';
 import { Menu } from './Menu';
+import { Rankings } from './Rankings';
 import { Scout } from './Scout';
 import { Settings } from './Settings';
 import { UsefulLinks } from './UsefulLinks';
@@ -33,6 +34,10 @@ const GetRoutes = (state) => [
   {
     path: "/settings",
     element: <Settings state={state} />
+  },
+  {
+    path: "/rankings",
+    element: <Rankings state={state} />
   }
 ];
 

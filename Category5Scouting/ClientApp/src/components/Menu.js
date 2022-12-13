@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Form, NavDropdown } from 'react-bootstrap';
 
 export function Menu() {
   return (
@@ -18,21 +19,35 @@ export function Menu() {
           <Navbar.Collapse id="responsive-navbar-nav">
           
           <Nav className="me-auto">
-            <LinkContainer to="/weather-forecast">
-              <Nav.Link>Weather forecast</Nav.Link>
-            </LinkContainer>
-
-            <LinkContainer to="/useful-links">
-              <Nav.Link>Useful links</Nav.Link>
+            <LinkContainer to="/scout">
+              <Nav.Link>Stand</Nav.Link>
             </LinkContainer>
 
             <LinkContainer to="/scout">
-              <Nav.Link>Scout</Nav.Link>
+              <Nav.Link>Pit</Nav.Link>
             </LinkContainer>
 
-            <LinkContainer to="/clicker">
-              <Nav.Link>Clicker</Nav.Link>
+            <LinkContainer to="/rankings">
+              <Nav.Link>Rankings</Nav.Link>
             </LinkContainer>
+
+            <NavDropdown title="Development" id="basic-nav-dropdown" menuVariant="dark">
+              <LinkContainer to="/useful-links">
+                <NavDropdown.Item>Useful Links</NavDropdown.Item>
+              </LinkContainer>
+
+              <LinkContainer to="/weather-forecast">
+                <NavDropdown.Item>Weather forecast</NavDropdown.Item>
+              </LinkContainer>
+
+              <LinkContainer to="/clicker">
+                <NavDropdown.Item>Clicker</NavDropdown.Item>
+              </LinkContainer>
+
+              <LinkContainer to="/scout">
+                <NavDropdown.Item>Scout</NavDropdown.Item>
+              </LinkContainer>
+            </NavDropdown>
           </Nav>
           
           <Nav>

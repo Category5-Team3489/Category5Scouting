@@ -18,7 +18,8 @@ processor.Process("Add Default Scouters", (ctx) =>
     ctx.scouters.AddRange(new List<Scouter>() {
         new Scouter(Guid.NewGuid().ToString(), "Mr. Blake"),
         new Scouter(Guid.NewGuid().ToString(), "Ben"),
-        new Scouter(Guid.NewGuid().ToString(), "Connor")
+        new Scouter(Guid.NewGuid().ToString(), "Connor"),
+        new Scouter(Guid.NewGuid().ToString(), "Van")
     });
 });
 
