@@ -1,4 +1,4 @@
-﻿namespace Category5Scouting;
+﻿namespace Category5Scouting.General;
 
 public record Scouter(string Id, string Name);
 

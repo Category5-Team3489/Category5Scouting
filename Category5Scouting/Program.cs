@@ -1,3 +1,5 @@
+using Category5Scouting.General;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +12,7 @@ app.UseStaticFiles();
 app.UseRouting();
 // app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}"); For controllers
 
-Processor processor = new();
+Processor<Context> processor = new(new Context());
 var processorTask = processor.RunAsync();
 
 processor.Process("Add Default Scouters", (ctx) =>
@@ -33,7 +35,7 @@ app.MapGet("/api/scouter/list", () =>
 {
     return processor.Process("/api/scouter/list", (ctx) =>
     {
-        return ctx.Serialize(ctx.scouters);
+        return Json.Serialize(ctx.scouters);
     });
 });
 
@@ -43,7 +45,7 @@ app.MapGet("/api/scouter/create", (string name) => {
     {
         Scouter scouter = new(Guid.NewGuid().ToString(), name);
         ctx.scouters.Add(scouter);
-        return ctx.Serialize(ctx.scouters);
+        return Json.Serialize(ctx.scouters);
     });
 });
 
@@ -52,7 +54,7 @@ app.MapGet("/api/scouter/delete", (string id) => {
     return processor.Process("/api/scouter/delete", (ctx) =>
     {
         ctx.scouters.RemoveAll(s => s.Id == id);
-        return ctx.Serialize(ctx.scouters);
+        return Json.Serialize(ctx.scouters);
     });
 });
 
@@ -87,7 +89,7 @@ app.MapGet("/api/clicker/leaderboard", () =>
     return processor.Process("/api/clicker/leaderboard", (ctx) =>
     {
         var leaderboard = ctx.cookieClickerManager.GetLeaderboard();
-        return ctx.Serialize(leaderboard);
+        return Json.Serialize(leaderboard);
     });
 });
 

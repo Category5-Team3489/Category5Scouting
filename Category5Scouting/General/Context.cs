@@ -1,6 +1,6 @@
-﻿namespace Category5Scouting;
+﻿namespace Category5Scouting.General;
 
-public class ProcessorContext
+public class Context : IContext
 {
     // Add data and code here is only ever touched by one thread at a time
 
@@ -11,17 +11,12 @@ public class ProcessorContext
     {
         // Start code
     }
-    public void Update()
+    public void Update(double deltaTime)
     {
         // Update code
     }
     public void Stop()
     {
         // Stop code
-    }
-
-    public string Serialize<TValue>(TValue value)
-    {
-        return JsonUtils.Serialize(value);
     }
 }

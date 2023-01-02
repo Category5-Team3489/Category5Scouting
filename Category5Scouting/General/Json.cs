@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 
-namespace Category5Scouting;
+namespace Category5Scouting.General;
 
-public class JsonUtils
+public class Json
 {
     public static string Serialize<TValue>(TValue value)
     {
