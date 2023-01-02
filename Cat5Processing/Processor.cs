@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Cat5Processing;
 
-public class Processor<C> where C : IContext
+public class Processor<C> where C : IContext, new()
 {
     private bool isProcessing = false;
 
@@ -11,9 +11,9 @@ public class Processor<C> where C : IContext
 
     private readonly C context;
 
-    public Processor(C context)
+    public Processor()
     {
-        this.context = context;
+        context = new C();
     }
 
     #region Process Methods

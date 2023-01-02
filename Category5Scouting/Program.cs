@@ -12,7 +12,7 @@ app.UseStaticFiles();
 app.UseRouting();
 // app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}"); For controllers
 
-Processor<Context> processor = new(new Context());
+Processor<Context> processor = new();
 var processorTask = processor.RunAsync();
 
 processor.Process("Add Default Scouters", (ctx) =>

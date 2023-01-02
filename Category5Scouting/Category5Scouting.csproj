@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -52,5 +52,10 @@
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </ResolvedFileToPublish>
     </ItemGroup>
+  </Target>
+
+  <Target Name="Deploy" AfterTargets="Publish">
+	<!-- <Exec WorkingDirectory="$(MSBuildProjectDirectory)\$(PublishUrl)" Command="dir" /> -->
+	<Exec WorkingDirectory="$(ProjectDir)" Command="start deploy\Category5Scouting.Deploy.exe recursive" />
   </Target>
 </Project>

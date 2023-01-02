@@ -44,7 +44,7 @@ public class CookieClickerManager
 
         public void Click()
         {
-            Cookies++;
+            Cookies += 1;
         }
     }
 }
