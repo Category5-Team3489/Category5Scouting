@@ -1,6 +1,8 @@
 ﻿using System.IO.Compression;
 using System.Text;
 
+namespace Category5Scouting.Deploy;
+
 public sealed class MetaCoeratorClient
 {
     private readonly static HttpClient Http = new();

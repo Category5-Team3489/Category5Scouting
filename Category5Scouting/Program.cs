@@ -1,4 +1,10 @@
-using Category5Scouting.General;
+string Cat5BotTokenPath = @$"{Directory.GetCurrentDirectory()}\Cat5BotToken.secret";
+
+if (File.Exists(Cat5BotTokenPath))
+{
+    await Category5Bot.MainAsync(File.ReadAllText(Cat5BotTokenPath));
+    return;
+}
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +34,7 @@ processor.Process("Add Default Scouters", (ctx) =>
 #region Endpoints
 app.MapGet("/api/stop", () =>
 {
-    processor.Stop();
+    //processor.Stop();
 });
 
 app.MapGet("/api/scouter/list", () =>
@@ -110,5 +116,5 @@ app.MapGet("/api/weather-forecast", () =>
 
 app.MapFallbackToFile("index.html");
 
-var serverTask = app.RunAsync(); //"http://*:6567"
+var serverTask = app.Environment.IsDevelopment() ? app.RunAsync("http://*:5194") : app.RunAsync("http://*:44464");
 await processorTask;

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cat5Processing", "Cat5Proce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Category5Scouting.Deploy", "Category5Scouting.Deploy\Category5Scouting.Deploy.csproj", "{1269BC72-BEA7-43B6-8E69-032DD306B387}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cat5Bot", "Cat5Bot\Cat5Bot.csproj", "{62594EA5-6AD0-41AD-BD44-00130BD59F01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1269BC72-BEA7-43B6-8E69-032DD306B387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1269BC72-BEA7-43B6-8E69-032DD306B387}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1269BC72-BEA7-43B6-8E69-032DD306B387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62594EA5-6AD0-41AD-BD44-00130BD59F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62594EA5-6AD0-41AD-BD44-00130BD59F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62594EA5-6AD0-41AD-BD44-00130BD59F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62594EA5-6AD0-41AD-BD44-00130BD59F01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

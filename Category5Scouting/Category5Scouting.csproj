@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cat5Bot\Cat5Bot.csproj" />
     <ProjectReference Include="..\Cat5Processing\Cat5Processing.csproj" />
   </ItemGroup>
 

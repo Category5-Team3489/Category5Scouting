@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using Category5Scouting.Deploy;
+
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;

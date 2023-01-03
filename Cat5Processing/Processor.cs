@@ -157,7 +157,7 @@ public class Processor<C> where C : IContext, new()
                 context.Update(timer.Elapsed.TotalSeconds);
                 timer.Restart();
             }
-            await Task.Delay(1);
+            await Task.Delay(20);
         }
     }
     public void Stop()
