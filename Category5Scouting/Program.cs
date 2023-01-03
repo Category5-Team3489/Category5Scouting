@@ -1,8 +1,10 @@
-string Cat5BotTokenPath = @$"{Directory.GetCurrentDirectory()}\Cat5BotToken.secret";
+string Cat5BotTokenPath = $"{Directory.GetCurrentDirectory()}/Cat5BotToken.secret";
 
 if (File.Exists(Cat5BotTokenPath))
 {
-    await Category5Bot.MainAsync(File.ReadAllText(Cat5BotTokenPath));
+    using var db = new LiteDatabase($"{Directory.GetCurrentDirectory()}/Cat5Bot.db");
+    await Category5Bot.MainAsync(File.ReadAllText(Cat5BotTokenPath), db);
+    Console.ReadLine();
     return;
 }
 

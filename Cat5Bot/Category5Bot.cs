@@ -8,11 +8,11 @@ public sealed class Category5Bot
         {
             Token = token,
             TokenType = TokenType.Bot,
-            Intents = DiscordIntents.AllUnprivileged
+            Intents = DiscordIntents.All,
+            // MinimumLogLevel = Microsoft.Extensions.Logging.LogLevel.Debug
         });
 
         var services = new ServiceCollection()
-            .AddSingleton<Random>()
             .AddSingleton(db)
             .BuildServiceProvider();
 
@@ -22,11 +22,7 @@ public sealed class Category5Bot
             Services = services
         });
 
-        discord.UseInteractivity(new InteractivityConfiguration()
-        {
-            // PollBehaviour = PollBehaviour.KeepEmojis,
-            // Timeout = TimeSpan.FromSeconds(30)
-        });
+        discord.UseInteractivity();
 
         commands.RegisterCommands<GeneralModule>();
 

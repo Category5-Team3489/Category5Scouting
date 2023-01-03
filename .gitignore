@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 *.secret
 Category5Scouting/deploy/Category5Scouting.zip
+Category5Scouting/Cat5Bot.db
