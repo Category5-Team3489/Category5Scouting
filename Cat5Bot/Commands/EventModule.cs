@@ -1,4 +1,6 @@
 ﻿using DSharpPlus.EventArgs;
+using Microsoft.Extensions.Logging;
+using System.Xml.Linq;
 
 namespace Cat5Bot.Commands;
 
@@ -21,12 +23,14 @@ public class EventModule : BaseCommandModule
     }
     */
 
+    // TODO ADD PERMS
     [GroupCommand]
     public async Task Command(CommandContext ctx)
     {
         var msg = await new DiscordMessageBuilder()
             .WithEmbed(new DiscordEmbedBuilder()
                 .WithTitle($"Please select an action {ctx.Member!.DisplayName}")
+                .WithColor(DiscordColor.Yellow)
                 .WithFooter($"Timeout in {Category5Bot.InteractivityTimeout.TotalMinutes} minutes")
             )
             .AddComponents(new DiscordComponent[]
@@ -44,7 +48,6 @@ public class EventModule : BaseCommandModule
         var result = await interactivity.WaitForButtonAsync(msg, ctx.User);
         if (result.TimedOut)
         {
-            await msg.DeleteAsync();
             await ctx.RespondAsync("Timeout");
             return;
         }
@@ -79,7 +82,6 @@ public class EventModule : BaseCommandModule
 
         if (modal.TimedOut)
         {
-            await msg.DeleteAsync();
             await ctx.RespondAsync("Timeout");
             return;
         }
@@ -90,10 +92,52 @@ public class EventModule : BaseCommandModule
         string startTime = modal.Result.Values["event_create_modal_start_time"];
         string endTime = modal.Result.Values["event_create_modal_end_time"];
 
+        if (info == "")
+        {
+            info = "No info provided.";
+        }
+
+        if (!DateOnly.TryParse(date, out DateOnly dateParsed))
+        {
+            await ctx.RespondAsync("Date invalid");
+            return;
+        }
+
+        if (!TimeOnly.TryParse(startTime, out TimeOnly startTimeParsed))
+        {
+            await ctx.RespondAsync("Start Time invalid");
+            return;
+        }
+
+        if (!TimeOnly.TryParse(endTime, out TimeOnly endTimeParsed))
+        {
+            await ctx.RespondAsync("End Time invalid");
+            return;
+        }
+
+        var events = Db.GetCollection<EventData>("events");
+
+        DateTime startTimeData = new(dateParsed.Year, dateParsed.Month, dateParsed.Day, startTimeParsed.Hour, startTimeParsed.Minute, 0);
+        DateTime endTimeData = new(dateParsed.Year, dateParsed.Month, dateParsed.Day, endTimeParsed.Hour, endTimeParsed.Minute, 0);
+
+        var @event = new EventData()
+        {
+            Title = title,
+            Info = info,
+            StartTime = startTimeData,
+            EndTime = endTimeData
+        };
+
+        events.Insert(@event);
+
+        var embed = @event.Embed()
+            .WithColor(DiscordColor.Green)
+            .WithTitle("Created Event");
+
         await modal.Result.Interaction.CreateResponseAsync(
             InteractionResponseType.ChannelMessageWithSource,
             new DiscordInteractionResponseBuilder()
-                .WithContent($"{title}\n{info}\n{date}\n{startTime}\n{endTime}")
+                .AddEmbed(embed)
         );
     }
     private async Task Update(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
@@ -101,16 +145,88 @@ public class EventModule : BaseCommandModule
         await result.Interaction.CreateResponseAsync(
             InteractionResponseType.ChannelMessageWithSource,
             new DiscordInteractionResponseBuilder()
-                .WithContent("Coming soon, to a discord server near you!")
+                .WithContent("Coming soon to a discord server near you!")
         );
     }
     private async Task Delete(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
     {
+        var delete = await interactivity.WaitForMessageAsync(
+            (msg) =>
+            {
+                if (msg.Author.Id != ctx.User.Id || msg.ChannelId != ctx.Channel.Id)
+                {
+                    return false;
+                }
 
+                if (int.TryParse(msg.Content, out _))
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        if (delete.TimedOut)
+        {
+            await ctx.RespondAsync("Timeout");
+            return;
+        }
+
+        var events = Db.GetCollection<EventData>("events");
+        events.EnsureIndex(x => x.Id);
+
+        int eventId = int.Parse(delete.Result.Content);
+        bool wasDeleted = events.Delete(eventId);
+
+        var embed = wasDeleted ?
+            new DiscordEmbedBuilder()
+                .WithTitle($"Event with Id of {eventId} deleted")
+                .WithColor(DiscordColor.Green)
+            :
+            new DiscordEmbedBuilder()
+                .WithTitle($"Event with Id of {eventId} not found")
+                .WithColor(DiscordColor.Red);
+
+        if (wasDeleted)
+        {
+            int attendantsDeleted = 0;
+            var people = Db.GetCollection<PersonData>("people");
+            foreach (var person in people.Query().ForUpdate().ToEnumerable())
+            {
+                if (person.Record is not null)
+                {
+                    attendantsDeleted += person.Record.RemoveAll(x => x == eventId);
+                }
+            }
+            embed.AddField("Attendants Deleted", attendantsDeleted.ToString());
+        }
+
+        await delete.Result.RespondAsync(embed);
     }
     private async Task List(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
     {
+        var events = Db.GetCollection<EventData>("events");
+        events.EnsureIndex(x => x.StartTime);
 
+        var pages = new List<Page>();
+        var eventsOrdered = events.Query().OrderByDescending(x => x.StartTime).ToList();
+        int number = 1;
+        foreach (EventData @event in eventsOrdered)
+        {
+            pages.Add(new Page("", @event.Embed()
+                .WithColor(DiscordColor.Purple)
+                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithFooter(
+                    $"\nPage {number}/{eventsOrdered.Count}\n" +
+                    $"Timeout in {Category5Bot.InteractivityTimeout.TotalMinutes} minutes"))
+                );
+            number++;
+        }
+
+        await result.Interaction.SendPaginatedResponseAsync(false, ctx.User, pages, null,
+            PaginationBehaviour.WrapAround,
+            ButtonPaginationBehavior.DeleteButtons
+        );
     }
 #pragma warning restore IDE0060 // Remove unused parameter
 

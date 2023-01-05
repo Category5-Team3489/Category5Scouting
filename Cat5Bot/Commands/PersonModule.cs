@@ -49,7 +49,7 @@ public class PersonModule : BaseCommandModule
         else
         {
             title = "Updated Person";
-            color = DiscordColor.Yellow;
+            color = DiscordColor.Blurple;
 
             person.Name = name;
         }
@@ -91,7 +91,7 @@ public class PersonModule : BaseCommandModule
             number++;
         }
 
-        await ctx.Channel.SendPaginatedMessageAsync(ctx.Member, pages,
+        await ctx.Channel.SendPaginatedMessageAsync(ctx.User, pages,
             PaginationBehaviour.WrapAround,
             ButtonPaginationBehavior.DeleteButtons
         );
