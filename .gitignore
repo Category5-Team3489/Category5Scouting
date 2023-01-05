@@ -399,3 +399,4 @@ FodyWeavers.xsd
 *.secret
 Category5Scouting/deploy/Category5Scouting.zip
 Category5Scouting/Cat5Bot.db
+Category5Scouting/Cat5Bot-log.db

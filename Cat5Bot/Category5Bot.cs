@@ -1,7 +1,14 @@
-﻿namespace Cat5Bot;
+﻿using Cat5Bot.Commands;
+
+namespace Cat5Bot;
 
 public sealed class Category5Bot
 {
+    public static readonly TimeSpan InteractivityTimeout = TimeSpan.FromMinutes(5);
+
+    // TODO add more embeds and colors for them
+    // TODO limit name length
+
     public static async Task MainAsync(string token, LiteDatabase db)
     {
         var discord = new DiscordClient(new DiscordConfiguration()
@@ -9,7 +16,7 @@ public sealed class Category5Bot
             Token = token,
             TokenType = TokenType.Bot,
             Intents = DiscordIntents.All,
-            // MinimumLogLevel = Microsoft.Extensions.Logging.LogLevel.Debug
+            MinimumLogLevel = Microsoft.Extensions.Logging.LogLevel.Trace
         });
 
         var services = new ServiceCollection()
@@ -22,9 +29,16 @@ public sealed class Category5Bot
             Services = services
         });
 
-        discord.UseInteractivity();
+        discord.UseInteractivity(new InteractivityConfiguration()
+        {
+            Timeout = InteractivityTimeout,
+            AckPaginationButtons = true
+        });
 
         commands.RegisterCommands<GeneralModule>();
+        commands.RegisterCommands<AttendanceModule>();
+        commands.RegisterCommands<EventModule>();
+        commands.RegisterCommands<PersonModule>();
 
         await discord.ConnectAsync();
     }

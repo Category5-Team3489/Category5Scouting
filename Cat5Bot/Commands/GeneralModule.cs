@@ -1,13 +1,12 @@
-﻿using Cat5Bot.Data;
-using DSharpPlus.Interactivity.Enums;
-using System.Text;
-
-namespace Cat5Bot;
+﻿namespace Cat5Bot;
 
 #pragma warning disable CA1822 // Mark members as static
+// #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 
 public class GeneralModule : BaseCommandModule
 {
+    // TODO IF EVENT WITH ATTENDEES IS REMOVED, REMOVE THE ATTENDANCE RECORDS SAYING THOSE PEOPLE WENT TO THE NOW NON-EXISTANT EVENT
+
     // Dependencies
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public LiteDatabase Db { private get; set; }
@@ -19,6 +18,7 @@ public class GeneralModule : BaseCommandModule
         await ctx.RespondAsync("Example!");
     }
 
+    /*
     [Command("event")]
     public async Task EventCommand(CommandContext ctx, string title, string info)
     {
@@ -57,11 +57,12 @@ public class GeneralModule : BaseCommandModule
 
         await ctx.Channel.SendPaginatedMessageAsync(ctx.Member, pages);
     }
+    */
 
     [Command("modal")]
     public async Task ModalCommand(CommandContext ctx)
     {
-        var msg = new DiscordMessageBuilder()
+        var msg = await new DiscordMessageBuilder()
             .WithContent("This message has buttons! Pretty neat innit?")
             .AddComponents(new DiscordComponent[]
             {
@@ -81,10 +82,33 @@ public class GeneralModule : BaseCommandModule
                 new DiscordInteractionResponseBuilder()
                     .WithContent("No more buttons for you >:)"));
             */
+
             await e.Interaction.CreateResponseAsync(
                 InteractionResponseType.Modal,
                 new DiscordInteractionResponseBuilder()
-                    .AddComponents(new DiscordActionRowComponent(new DIscord));
+                .WithCustomId("test")
+                .WithTitle("Test!")
+                .AddComponents(
+                    new TextInputComponent(
+                        label: "Test Input",
+                        customId: "test_text_input",
+                        placeholder: null,
+                        required: true,
+                        style: TextInputStyle.Short,
+                        min_length: 0,
+                        max_length: null
+                    )
+                )
+            );
+        };
+
+        ctx.Client.ModalSubmitted += async (s, e) =>
+        {
+            await e.Interaction.CreateResponseAsync(
+                InteractionResponseType.ChannelMessageWithSource,
+                new DiscordInteractionResponseBuilder()
+                    .WithContent(e.Values["test_text_input"])
+            );
         };
     }
 }
