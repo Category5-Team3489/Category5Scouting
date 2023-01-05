@@ -15,7 +15,7 @@ public class PersonData : IEmbeddable
         return new DiscordEmbedBuilder()
             .AddField(nameof(Name), Name.ToString(), false)
             .AddField(nameof(Id), Id.ToString(), false)
-            .AddField(nameof(DiscordId), DiscordId.ToString(), false)
+            .AddField(nameof(DiscordId), DiscordId.ToString(), false) // TODO NOT GUD IF NULL, FIX, maybe, will it just say null??????
             .AddField($"{nameof(Record)}.Count", recordCount.ToString(), false);
     }
 }

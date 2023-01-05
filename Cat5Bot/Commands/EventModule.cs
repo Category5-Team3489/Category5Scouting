@@ -150,6 +150,17 @@ public class EventModule : BaseCommandModule
     }
     private async Task Delete(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
     {
+        await result.Interaction.CreateResponseAsync(
+            InteractionResponseType.ChannelMessageWithSource,
+            new DiscordInteractionResponseBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Purple)
+                    .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                    .WithTitle("Enter event Id of event to be deleted")
+                    .WithDescription("List events to get their Ids")
+                )
+        );
+
         var delete = await interactivity.WaitForMessageAsync(
             (msg) =>
             {
