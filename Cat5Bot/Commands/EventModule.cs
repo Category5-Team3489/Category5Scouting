@@ -11,23 +11,16 @@ public class EventModule : BaseCommandModule
     public LiteDatabase Db { private get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-    /*
-    [Command("example")]
-    public async Task ExampleCommand(CommandContext ctx)
-    {
-        await ctx.RespondAsync("Example!");
-    }
-    */
-
-    // TODO ADD PERMS
-    [GroupCommand]
+    #region GroupCommand
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx)
     {
         var msg = await new DiscordMessageBuilder()
             .WithEmbed(new DiscordEmbedBuilder()
-                .WithTitle($"Please select an action {ctx.Member!.DisplayName}")
                 .WithColor(DiscordColor.Yellow)
-                .WithFooter($"Timeout in {Category5Bot.InteractivityTimeout.TotalMinutes} minutes")
+                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithTitle($"Select an action")
+                .WithFooter(Category5Bot.InteractivityTimeoutText)
             )
             .AddComponents(new DiscordComponent[]
             {
@@ -48,8 +41,7 @@ public class EventModule : BaseCommandModule
             return;
         }
 
-        string customId = result.Result.Id;
-        switch (customId)
+        switch (result.Result.Id)
         {
             case "event_create":
                 await Create(ctx, msg, interactivity, result.Result);
@@ -65,6 +57,7 @@ public class EventModule : BaseCommandModule
                 return;
         }
     }
+    #endregion GroupCommand
 
 #pragma warning disable IDE0060 // Remove unused parameter
     private async Task Create(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
