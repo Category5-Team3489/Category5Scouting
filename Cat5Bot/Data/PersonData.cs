@@ -53,6 +53,6 @@ public class PersonData : IEmbeddable
             .AddField(nameof(Name), Name.ToString(), false)
             .AddField(nameof(Id), Id.ToString(), false)
             .AddField(nameof(DiscordId), (DiscordId is null ? 0 : DiscordId.Value).ToString(), false)
-            .AddField($"{nameof(Record)}.Count", (Record is null ? 0 : Record.Count).ToString(), false);
+            .AddField($"{nameof(Record)} Count", (Record is null ? 0 : Record.Count).ToString(), false);
     }
 }

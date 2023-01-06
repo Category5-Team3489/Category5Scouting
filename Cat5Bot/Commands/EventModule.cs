@@ -38,24 +38,27 @@ public class EventModule : BaseCommandModule
         if (result.TimedOut)
         {
             await ctx.RespondAsync("Timeout");
-            return;
+        }
+        else
+        {
+            switch (result.Result.Id)
+            {
+                case "event_create":
+                    await Create(ctx, msg, interactivity, result.Result);
+                    break;
+                case "event_update":
+                    await Update(ctx, msg, interactivity, result.Result);
+                    break;
+                case "event_delete":
+                    await Delete(ctx, msg, interactivity, result.Result);
+                    break;
+                case "event_list":
+                    await List(ctx, msg, interactivity, result.Result);
+                    break;
+            }
         }
 
-        switch (result.Result.Id)
-        {
-            case "event_create":
-                await Create(ctx, msg, interactivity, result.Result);
-                return;
-            case "event_update":
-                await Update(ctx, msg, interactivity, result.Result);
-                return;
-            case "event_delete":
-                await Delete(ctx, msg, interactivity, result.Result);
-                return;
-            case "event_list":
-                await List(ctx, msg, interactivity, result.Result);
-                return;
-        }
+        await msg.DeleteAsync();
     }
     #endregion GroupCommand
 
