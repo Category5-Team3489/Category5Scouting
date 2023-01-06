@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-
-namespace Cat5Bot.Commands;
+﻿namespace Cat5Bot.Commands;
 
 // #pragma warning disable CA1822 // Mark members as static
 // #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously

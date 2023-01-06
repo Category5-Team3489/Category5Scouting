@@ -1,7 +1,4 @@
-﻿using System;
-using System.Xml.Linq;
-
-namespace Cat5Bot.Data;
+﻿namespace Cat5Bot.Data;
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
@@ -12,6 +9,16 @@ public class EventData : IEmbeddable
     public string Info { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
+
+    public EventData() { }
+
+    public EventData(string title, string info, DateTime startTime, DateTime endTime)
+    {
+        Title = title;
+        Info = info;
+        StartTime = startTime;
+        EndTime = endTime;
+    }
 
     public DiscordEmbedBuilder Embed()
     {

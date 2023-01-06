@@ -9,13 +9,50 @@ public class PersonData : IEmbeddable
     public ulong? DiscordId { get; set; }
     public List<int>? Record { get; set; }
 
+    public PersonData() { }
+
+    public PersonData(string name, ulong? discordId = null)
+    {
+        Name = name;
+        DiscordId = discordId;
+    }
+
+    // Fails if Record already contains eventId
+    public bool Add(int eventId)
+    {
+        if (Record is null)
+        {
+            Record = new List<int>() { eventId };
+        }
+        else
+        {
+            if (Record.Contains(eventId))
+            {
+                return false;
+            }
+
+            Record.Add(eventId);
+        }
+        return true;
+    }
+    
+    // Fails if Record is null or Record does not contain eventId
+    public bool Remove(int eventId)
+    {
+        if (Record is null)
+        {
+            return false;
+        }
+
+        return Record.Remove(eventId);
+    }
+
     public DiscordEmbedBuilder Embed()
     {
-        int recordCount = Record is null ? 0 : Record.Count;
         return new DiscordEmbedBuilder()
             .AddField(nameof(Name), Name.ToString(), false)
             .AddField(nameof(Id), Id.ToString(), false)
-            .AddField(nameof(DiscordId), DiscordId.ToString(), false) // TODO NOT GUD IF NULL, FIX, maybe, will it just say null??????
-            .AddField($"{nameof(Record)}.Count", recordCount.ToString(), false);
+            .AddField(nameof(DiscordId), (DiscordId is null ? 0 : DiscordId.Value).ToString(), false)
+            .AddField($"{nameof(Record)}.Count", (Record is null ? 0 : Record.Count).ToString(), false);
     }
 }
