@@ -11,32 +11,39 @@ public class PersonModule : BaseCommandModule
     public LiteDatabase Db { private get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
+    #region GroupCommand
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)
     {
         await Command(ctx, ctx.Member!.DisplayName);
     }
-
-    [GroupCommand, RequireGuild]
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx, DiscordMember member)
     {
         await Command(ctx, member, member.DisplayName);
     }
-
-    [GroupCommand, RequireGuild]
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx, DiscordMember member, [RemainingText] string name)
     {
+        if (name < 1 || name.Length > 32)
+        {
+            await ctx.RespondAsync(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Red)
+                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithTitle("Error")
+                .WithDescription("Name length must be between 1 and 32 characters");
+            );
+        }
+
         var people = Db.GetCollection<PersonData>("people");
 
         people.EnsureIndex(x => x.DiscordId);
         var person = people.FindOne(x => x.DiscordId == member.Id);
 
         string title;
-        DiscordColor color;
         if (person is null)
         {
             title = "Created Person";
-            color = DiscordColor.Green;
             person = new PersonData()
             {
                 Name = name,
@@ -46,28 +53,25 @@ public class PersonModule : BaseCommandModule
         else
         {
             title = "Updated Person";
-            color = DiscordColor.Blurple;
-
             person.Name = name;
         }
 
         people.Upsert(person);
 
-        var embed = person.Embed()
+        await ctx.RespondAsync(person.Embed()
+            .WithColor(DiscordColor.Green)
+            .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
             .WithTitle(title)
-            .WithColor(color);
-
-        await ctx.RespondAsync(embed);
+        );
     }
-
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx, [RemainingText] string name)
     {
         await Command(ctx, ctx.Member!, name);
     }
+    #region GroupCommand
 
-    //RequireRoles(RoleCheckMode.MatchIds, 
-    [Command("list"), RequireGuild]
+    [Command("list"), RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task ListCommand(CommandContext ctx)
     {
         var people = Db.GetCollection<PersonData>("people");
@@ -78,13 +82,16 @@ public class PersonModule : BaseCommandModule
         int number = 1;
         foreach (PersonData person in peopleOrdered)
         {
-            pages.Add(new Page("", person.Embed()
-                .WithColor(DiscordColor.Purple)
-                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
-                .WithFooter(
-                    $"\nPage {number}/{peopleOrdered.Count}\n" +
-                    $"Timeout in {Category5Bot.InteractivityTimeout.TotalMinutes} minutes"))
-                );
+            pages.Add(new Page("",
+                person.Embed()
+                    .WithColor(DiscordColor.Green)
+                    .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                    .WithFooter(
+                        $"Page {number}/{peopleOrdered.Count}\n" +
+                        InteractivityTimeoutText
+                    )
+                )
+            );
             number++;
         }
 

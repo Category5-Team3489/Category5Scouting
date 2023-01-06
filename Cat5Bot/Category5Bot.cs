@@ -5,6 +5,7 @@ namespace Cat5Bot;
 public sealed class Category5Bot
 {
     public static readonly TimeSpan InteractivityTimeout = TimeSpan.FromMinutes(5);
+    public static readonly string InteractivityTimeoutText = $"Timeout in {InteractivityTimeout.TotalMinutes} minutes";
 
     // TODO add more embeds and colors for them
     // TODO limit name length
