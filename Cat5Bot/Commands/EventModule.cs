@@ -1,7 +1,7 @@
 ﻿namespace Cat5Bot.Commands;
 
 #pragma warning disable CA1822 // Mark members as static
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+// #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 
 [Group("event"), Aliases("e")]
 public class EventModule : BaseCommandModule
@@ -149,7 +149,7 @@ public class EventModule : BaseCommandModule
                     .WithColor(DiscordColor.Purple)
                     .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
                     .WithTitle("Enter event Id of event to be deleted")
-                    .WithDescription("List events to get their Ids")
+                    .WithDescription("Interface will be improved, list events to get their Ids")
                 )
         );
 
@@ -241,7 +241,7 @@ public class EventModule : BaseCommandModule
             .AddComponents(new TextInputComponent(
                     label: "Title",
                     customId: "event_create_modal_title",
-                    placeholder: "Ex: \"Robotics Meeting\"",
+                    placeholder: "Ex: \"Meeting\"",
                     required: true,
                     style: TextInputStyle.Short,
                     min_length: 0,
@@ -266,7 +266,7 @@ public class EventModule : BaseCommandModule
                     max_length: 10
             ))
             .AddComponents(new TextInputComponent(
-                    label: "Start Time (X:XX am/pm ONLY)",
+                    label: "Start Time (H:MM am/pm ONLY)",
                     customId: "event_create_modal_start_time",
                     placeholder: "Ex: \"9:00am\"",
                     required: true,
@@ -275,7 +275,7 @@ public class EventModule : BaseCommandModule
                     max_length: 7
             ))
             .AddComponents(new TextInputComponent(
-                    label: "End Time (X:XX am/pm ONLY)",
+                    label: "End Time (H:MM am/pm ONLY)",
                     customId: "event_create_modal_end_time",
                     placeholder: "Ex: \"4:00pm\"",
                     required: true,

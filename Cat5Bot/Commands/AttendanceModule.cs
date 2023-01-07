@@ -11,84 +11,74 @@ public class AttendanceModule : BaseCommandModule
     public LiteDatabase Db { private get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-    /*
-    [Command("example")]
-    public async Task ExampleCommand(CommandContext ctx)
-    {
-        await ctx.RespondAsync("Example!");
-    }
-    */
-
-    // TODO require perms
+    #region GroupCommand
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)
     {
-        try
+        var events = Db.GetCollection<EventData>("events");
+        events.EnsureIndex(x => x.StartTime);
+        events.EnsureIndex(x => x.Id);
+
+        DateTime now = DateTime.Now;
+        var closestEvent = events.FindAll()
+            .OrderBy(x => Math.Abs((x.StartTime - now).TotalMilliseconds))
+            .First();
+
+        if (closestEvent is null)
         {
-            //await ctx.RespondAsync("Example!");
+            await ctx.RespondAsync(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Red)
+                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithTitle("Error")
+                .WithDescription("No attendable events in database")
+            );
+            return;
+        }
 
-            var events = Db.GetCollection<EventData>("events");
-            events.EnsureIndex(x => x.StartTime);
+        var people = Db.GetCollection<PersonData>("people");
+        people.EnsureIndex(x => x.DiscordId);
 
-            DateTime now = DateTime.Now;
-            // TODO ERROR
-            var closestEvent = events.Query().OrderBy(x => Math.Abs((x.StartTime - now).TotalMilliseconds)).First();
+        var person = people.FindOne(x => x.DiscordId == ctx.Member!.Id);
 
-            var people = Db.GetCollection<PersonData>("people");
-            people.EnsureIndex(x => x.DiscordId);
-
-            var person = people.FindOne(x => x.DiscordId == ctx.Member!.Id);
-
-            if (closestEvent is null)
+        // TODO say if new person was created?
+        if (person is null)
+        {
+            person = new PersonData
             {
-                // TODO imrpove
-                await ctx.RespondAsync("No attendable events");
-                return;
-            }
-
-            // TODO say if new person was created?
-            if (person is null)
+                Name = ctx.Member!.DisplayName,
+                DiscordId = ctx.Member.Id,
+                Record = new List<int>() { closestEvent.Id }
+            };
+        }
+        else
+        {
+            if (person.Record is null)
             {
-                person = new PersonData
-                {
-                    Name = ctx.Member!.DisplayName,
-                    DiscordId = ctx.Member.Id,
-                    Record = new List<int>() { closestEvent.Id }
-                };
+                person.Record = new List<int>() { closestEvent.Id };
             }
             else
             {
-                if (person.Record is null)
+                if (!person.Record.Contains(closestEvent.Id))
                 {
-                    person.Record = new List<int>() { closestEvent.Id };
+                    person.Record.Add(closestEvent.Id);
                 }
                 else
                 {
-                    if (!person.Record.Contains(closestEvent.Id))
-                    {
-                        person.Record.Add(closestEvent.Id);
-                    }
-                    else
-                    {
-                        // TODO imrpove
-                        await ctx.RespondAsync("Already attending this event");
-                        return;
-                    }
+                    // TODO imrpove
+                    await ctx.RespondAsync("Already attending this event");
+                    return;
                 }
-                // TODO check not already attending and say
             }
-
-            people.Upsert(person);
-
-            var embed = closestEvent.Embed()
-                .WithTitle("Attending Event")
-                .WithColor(DiscordColor.Green);
-
-            await ctx.RespondAsync(embed);
+            // TODO check not already attending and say
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.ToString());
-        }
+
+        people.Upsert(person);
+
+        var embed = closestEvent.Embed()
+            .WithTitle("Attending Event")
+            .WithColor(DiscordColor.Green);
+
+        await ctx.RespondAsync(embed);
     }
+    #endregion GroupCommand
 }

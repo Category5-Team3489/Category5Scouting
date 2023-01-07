@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace Cat5Bot.Commands;
+﻿namespace Cat5Bot.Commands;
 
 // #pragma warning disable CA1822 // Mark members as static
 // #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
@@ -41,19 +39,15 @@ public class PersonModule : BaseCommandModule
         }
 
         var people = Db.GetCollection<PersonData>("people");
-
         people.EnsureIndex(x => x.DiscordId);
+
         var person = people.FindOne(x => x.DiscordId == member.Id);
 
         string title;
         if (person is null)
         {
             title = "Created Person";
-            person = new PersonData()
-            {
-                Name = name,
-                DiscordId = member.Id
-            };
+            person = new PersonData(name, member.Id);
         }
         else
         {
@@ -108,7 +102,7 @@ public class PersonModule : BaseCommandModule
                     .WithTitle("People")
                     .WithFooter(
                         $"Page {number}/{peopleOrdered.Count}\n" +
-                        $"Valid as of {DateTime.Now}\n" +
+                        $"{Category5Bot.ValidAsOfNow}\n" +
                         Category5Bot.InteractivityTimeoutText
                     )
                 )
@@ -119,6 +113,35 @@ public class PersonModule : BaseCommandModule
         await ctx.Channel.SendPaginatedMessageAsync(ctx.User, pages,
             PaginationBehaviour.WrapAround,
             ButtonPaginationBehavior.DeleteButtons
+        );
+    }
+
+    [Command("delete"), RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
+    public async Task DeleteCommand(CommandContext ctx, DiscordMember member)
+    {
+        Console.WriteLine("[Cat5Bot] !person delete");
+
+        var people = Db.GetCollection<PersonData>("people");
+
+        var person = people.FindOne(x => x.DiscordId == member.Id);
+
+        if (person is null)
+        {
+            await ctx.RespondAsync(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Red)
+                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithTitle("Error")
+                .WithDescription("Person not found in database")
+            );
+            return;
+        }
+
+        people.Delete(person.Id);
+
+        await ctx.RespondAsync(person.Embed()
+            .WithColor(DiscordColor.Green)
+            .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+            .WithTitle("Deleted Person")
         );
     }
 }
