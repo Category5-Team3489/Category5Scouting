@@ -15,7 +15,7 @@ public sealed class Category5Bot
             Token = token,
             TokenType = TokenType.Bot,
             Intents = DiscordIntents.All,
-            MinimumLogLevel = LogLevel.Trace
+            // MinimumLogLevel = LogLevel.Trace
         });
 
         var services = new ServiceCollection()

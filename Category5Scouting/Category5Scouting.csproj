@@ -58,6 +58,6 @@
 
   <Target Name="Deploy" AfterTargets="Publish">
 	<!-- <Exec WorkingDirectory="$(MSBuildProjectDirectory)\$(PublishUrl)" Command="dir" /> -->
-	<Exec WorkingDirectory="$(ProjectDir)" Command="start deploy\Category5Scouting.Deploy.exe recursive" />
+	<!-- <Exec WorkingDirectory="$(ProjectDir)" Command="start deploy\Category5Scouting.Deploy.exe recursive" /> -->
   </Target>
 </Project>
