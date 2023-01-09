@@ -20,12 +20,17 @@ public class AttendanceModule : BaseCommandModule
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)
     {
-
+        await Command(ctx, ctx.Member!);
+    }
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
+    public async Task Command(CommandContext ctx, DiscordMember member)
+    {
+        await Command(ctx, member.Id, member.DisplayName);
     }
     [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx, ulong discordId)
     {
-
+        await Command(ctx, discordId, "");
     }
     [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx, ulong discordId, [RemainingText] string name)
@@ -40,6 +45,10 @@ public class AttendanceModule : BaseCommandModule
     public async Task Command(CommandContext ctx, [RemainingText] string name)
     {
         // Error if name not found or duplicates of provided name exist
+        var people = Db.GetCollection<PersonData>("people");
+        people.EnsureIndex(x => x.Name);
+
+        people.
     }
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)
