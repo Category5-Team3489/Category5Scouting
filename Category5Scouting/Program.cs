@@ -1,6 +1,5 @@
 string Cat5BotTokenPath = $"{Directory.GetCurrentDirectory()}/Cat5BotToken.secret";
 
-/*
 if (File.Exists(Cat5BotTokenPath))
 {
     using var db = new LiteDatabase($"{Directory.GetCurrentDirectory()}/Cat5Bot.db");
@@ -8,7 +7,6 @@ if (File.Exists(Cat5BotTokenPath))
     Console.ReadLine();
     return;
 }
-*/
 
 var builder = WebApplication.CreateBuilder(args);
 
