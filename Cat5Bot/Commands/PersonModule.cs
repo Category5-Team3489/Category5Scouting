@@ -11,6 +11,8 @@ public class PersonModule : BaseCommandModule
     public LiteDatabase Db { private get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
+    // TODO !person info command
+
     #region GroupCommand
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)
@@ -101,7 +103,7 @@ public class PersonModule : BaseCommandModule
                 .WithTitle("People")
                 .WithFooter(
                     $"Page {number}/{peopleOrdered.Count}\n" +
-                    $"{Category5Bot.ValidAsOfNow}\n" +
+                    $"{Category5Bot.ValidAsOfNowText}\n" +
                     Category5Bot.InteractivityTimeoutText
                 )
             ));

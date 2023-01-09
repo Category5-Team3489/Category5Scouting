@@ -9,6 +9,8 @@ public class Category5Bot
     public static string ValidAsOfNowText => $"Valid as of {DateTime.Now}";
     public static string InitiatorText(CommandContext ctx) => $"Initiator: {ctx.Member!.DisplayName}";
 
+    // TODO Template events, "Weekday Meeting, Saturday Meeting????"
+
     public static async Task MainAsync(string token, LiteDatabase db)
     {
         var discord = new DiscordClient(new DiscordConfiguration()

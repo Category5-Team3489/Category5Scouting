@@ -62,7 +62,7 @@ public class ExportModule : BaseCommandModule
             .AddEmbed(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Green)
                 .WithTitle("Attendance Record")
-                .WithFooter(Category5Bot.ValidAsOfNow)
+                .WithFooter(Category5Bot.ValidAsOfNowText)
             )
             .AddFile(fileName, export)
         );
@@ -72,7 +72,7 @@ public class ExportModule : BaseCommandModule
             .WithAuthor(Category5Bot.InitiatorText(ctx))
             .WithTitle("Attendance Record")
             .WithDescription("The attendance record has been direct messaged to you")
-            .WithFooter(Category5Bot.ValidAsOfNow)
+            .WithFooter(Category5Bot.ValidAsOfNowText)
         );
     }
     #endregion GroupCommand
