@@ -12,6 +12,7 @@ public class PersonModule : BaseCommandModule
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     // TODO !person info command
+    // TODO add supplying discordId instead of member, someone may not have discord for the time being
 
     #region GroupCommand
     [GroupCommand, RequireGuild]

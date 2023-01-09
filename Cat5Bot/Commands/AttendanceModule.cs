@@ -14,8 +14,33 @@ public class AttendanceModule : BaseCommandModule
     // TODO Use select menu for attending previous events, !attend -> buttons: (this event, other event), choose
     // ^^^^^ Give 20 or max selection amt of closest events, both future and past, present in middle
     // TODO Say name of person attending event in title Ex: Jerry Attending Event
+    // TODO Use another role or something to let someone mark attendance for another person
 
     #region GroupCommand
+    [GroupCommand, RequireGuild]
+    public async Task Command(CommandContext ctx)
+    {
+
+    }
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
+    public async Task Command(CommandContext ctx, ulong discordId)
+    {
+
+    }
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
+    public async Task Command(CommandContext ctx, ulong discordId, [RemainingText] string name)
+    {
+        Console.WriteLine("[Cat5Bot] !attend");
+
+        // TODO Empty string for name means give error if discord id collides or isn't found
+
+
+    }
+    [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
+    public async Task Command(CommandContext ctx, [RemainingText] string name)
+    {
+        // Error if name not found or duplicates of provided name exist
+    }
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)
     {

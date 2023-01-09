@@ -258,49 +258,49 @@ public class EventModule : BaseCommandModule
             .WithCustomId("event_create_modal")
             .WithTitle("New Event")
             .AddComponents(new TextInputComponent(
-                    label: "Title",
-                    customId: "event_create_modal_title",
-                    placeholder: "Ex: \"Meeting\"",
-                    required: true,
-                    style: TextInputStyle.Short,
-                    min_length: 0,
-                    max_length: 70
+                label: "Title",
+                customId: "event_create_modal_title",
+                placeholder: "Ex: \"Meeting\"",
+                required: true,
+                style: TextInputStyle.Short,
+                min_length: 0,
+                max_length: 70
             ))
             .AddComponents(new TextInputComponent(
-                    label: "Info (Optional)",
-                    customId: "event_create_modal_info",
-                    placeholder: "Ex: \"BRING SAFETY GLASSES!!!\"",
-                    required: false,
-                    style: TextInputStyle.Paragraph,
-                    min_length: 0,
-                    max_length: 280
+                label: "Info (Optional)",
+                customId: "event_create_modal_info",
+                placeholder: "Ex: \"BRING SAFETY GLASSES!!!\"",
+                required: false,
+                style: TextInputStyle.Paragraph,
+                min_length: 0,
+                max_length: 280
             ))
             .AddComponents(new TextInputComponent(
-                    label: "Date (M/D/YYYY ONLY)",
-                    customId: "event_create_modal_date",
-                    placeholder: "Ex: \"12/25/2022\"",
-                    required: true,
-                    style: TextInputStyle.Short,
-                    min_length: 8,
-                    max_length: 10
+                label: "Date (M/D/YYYY ONLY)",
+                customId: "event_create_modal_date",
+                placeholder: "Ex: \"12/25/2022\"",
+                required: true,
+                style: TextInputStyle.Short,
+                min_length: 8,
+                max_length: 10
             ))
             .AddComponents(new TextInputComponent(
-                    label: "Start Time (H:MM am/pm ONLY)",
-                    customId: "event_create_modal_start_time",
-                    placeholder: "Ex: \"9:00am\"",
-                    required: true,
-                    style: TextInputStyle.Short,
-                    min_length: 6,
-                    max_length: 7
+                label: "Start Time (H:MM am/pm ONLY)",
+                customId: "event_create_modal_start_time",
+                placeholder: "Ex: \"9:00am\"",
+                required: true,
+                style: TextInputStyle.Short,
+                min_length: 6,
+                max_length: 7
             ))
             .AddComponents(new TextInputComponent(
-                    label: "End Time (H:MM am/pm ONLY)",
-                    customId: "event_create_modal_end_time",
-                    placeholder: "Ex: \"4:00pm\"",
-                    required: true,
-                    style: TextInputStyle.Short,
-                    min_length: 6,
-                    max_length: 7
+                label: "End Time (H:MM am/pm ONLY)",
+                customId: "event_create_modal_end_time",
+                placeholder: "Ex: \"4:00pm\"",
+                required: true,
+                style: TextInputStyle.Short,
+                min_length: 6,
+                max_length: 7
             )
         );
     }
