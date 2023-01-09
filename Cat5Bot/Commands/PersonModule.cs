@@ -31,7 +31,7 @@ public class PersonModule : BaseCommandModule
         {
             await ctx.RespondAsync(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Red)
-                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
                 .WithTitle("Error")
                 .WithDescription("Name length must be between 1 and 32 characters")
             );
@@ -59,7 +59,7 @@ public class PersonModule : BaseCommandModule
 
         await ctx.RespondAsync(person.Embed()
             .WithColor(DiscordColor.Green)
-            .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+            .WithAuthor(Category5Bot.InitiatorText(ctx))
             .WithTitle(title)
         );
     }
@@ -84,7 +84,7 @@ public class PersonModule : BaseCommandModule
         {
             await ctx.RespondAsync(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Red)
-                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
                 .WithTitle("Error")
                 .WithDescription("No people in database")
             );
@@ -95,18 +95,16 @@ public class PersonModule : BaseCommandModule
         int number = 1;
         foreach (PersonData person in peopleOrdered)
         {
-            pages.Add(new Page("",
-                person.Embed()
-                    .WithColor(DiscordColor.Green)
-                    .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
-                    .WithTitle("People")
-                    .WithFooter(
-                        $"Page {number}/{peopleOrdered.Count}\n" +
-                        $"{Category5Bot.ValidAsOfNow}\n" +
-                        Category5Bot.InteractivityTimeoutText
-                    )
+            pages.Add(new Page("", person.Embed()
+                .WithColor(DiscordColor.Green)
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
+                .WithTitle("People")
+                .WithFooter(
+                    $"Page {number}/{peopleOrdered.Count}\n" +
+                    $"{Category5Bot.ValidAsOfNow}\n" +
+                    Category5Bot.InteractivityTimeoutText
                 )
-            );
+            ));
             number++;
         }
 
@@ -129,7 +127,7 @@ public class PersonModule : BaseCommandModule
         {
             await ctx.RespondAsync(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Red)
-                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
                 .WithTitle("Error")
                 .WithDescription("Person not found in database")
             );
@@ -140,7 +138,7 @@ public class PersonModule : BaseCommandModule
 
         await ctx.RespondAsync(person.Embed()
             .WithColor(DiscordColor.Green)
-            .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+            .WithAuthor(Category5Bot.InitiatorText(ctx))
             .WithTitle("Deleted Person")
         );
     }

@@ -11,6 +11,8 @@ public class AttendanceModule : BaseCommandModule
     public LiteDatabase Db { private get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
+    // Use select menu for attending previous events, !attend -> buttons: (this event, other event), choose
+
     #region GroupCommand
     [GroupCommand, RequireGuild]
     public async Task Command(CommandContext ctx)

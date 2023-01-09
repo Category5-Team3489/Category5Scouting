@@ -15,10 +15,12 @@ public class EventModule : BaseCommandModule
     [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx)
     {
+        Console.WriteLine("[Cat5Bot] !event");
+
         var msg = await new DiscordMessageBuilder()
             .WithEmbed(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Yellow)
-                .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
                 .WithTitle($"Select an action")
                 .WithFooter(Category5Bot.InteractivityTimeoutText)
             )
@@ -37,7 +39,11 @@ public class EventModule : BaseCommandModule
         var result = await interactivity.WaitForButtonAsync(msg, ctx.User);
         if (result.TimedOut)
         {
-            await ctx.RespondAsync("Timeout");
+            await ctx.RespondAsync(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Red)
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
+                .WithTitle("Timeout")
+            );
         }
         else
         {
@@ -74,7 +80,11 @@ public class EventModule : BaseCommandModule
 
         if (modal.TimedOut)
         {
-            await ctx.RespondAsync("Timeout");
+            await ctx.RespondAsync(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Red)
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
+                .WithTitle("Timeout")
+            );
             return;
         }
 
@@ -137,7 +147,12 @@ public class EventModule : BaseCommandModule
         await result.Interaction.CreateResponseAsync(
             InteractionResponseType.ChannelMessageWithSource,
             new DiscordInteractionResponseBuilder()
-                .WithContent("Coming soon to a discord server near you!")
+                .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Yellow)
+                    .WithAuthor(Category5Bot.InitiatorText(ctx))
+                    .WithTitle("Coming soon to a discord server near you!")
+                    .WithDescription("Delete and create a new event event for now")
+                )
         );
     }
     private async Task Delete(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
@@ -171,7 +186,11 @@ public class EventModule : BaseCommandModule
 
         if (delete.TimedOut)
         {
-            await ctx.RespondAsync("Timeout");
+            await ctx.RespondAsync(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Red)
+                .WithAuthor(Category5Bot.InitiatorText(ctx))
+                .WithTitle("Timeout")
+            );
             return;
         }
 

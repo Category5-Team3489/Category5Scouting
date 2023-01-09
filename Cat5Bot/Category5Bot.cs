@@ -2,11 +2,12 @@
 
 namespace Cat5Bot;
 
-public sealed class Category5Bot
+public class Category5Bot
 {
     public static readonly TimeSpan InteractivityTimeout = TimeSpan.FromMinutes(5);
     public static readonly string InteractivityTimeoutText = $"Timeout in {InteractivityTimeout.TotalMinutes} minutes";
-    public static string ValidAsOfNow => $"Valid as of {DateTime.Now}";
+    public static string ValidAsOfNowText => $"Valid as of {DateTime.Now}";
+    public static string InitiatorText(CommandContext ctx) => $"Initiator: {ctx.Member!.DisplayName}";
 
     public static async Task MainAsync(string token, LiteDatabase db)
     {

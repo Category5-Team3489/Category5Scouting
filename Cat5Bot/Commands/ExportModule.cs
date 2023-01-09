@@ -69,7 +69,7 @@ public class ExportModule : BaseCommandModule
 
         await ctx.RespondAsync(new DiscordEmbedBuilder()
             .WithColor(DiscordColor.Green)
-            .WithAuthor($"Initiator: {ctx.Member!.DisplayName}")
+            .WithAuthor(Category5Bot.InitiatorText(ctx))
             .WithTitle("Attendance Record")
             .WithDescription("The attendance record has been direct messaged to you")
             .WithFooter(Category5Bot.ValidAsOfNow)
