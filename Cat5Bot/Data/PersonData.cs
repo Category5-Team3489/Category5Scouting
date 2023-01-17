@@ -6,12 +6,12 @@ public class PersonData : IEmbeddable
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public ulong? DiscordId { get; set; }
+    public ulong DiscordId { get; set; }
     public List<int>? Record { get; set; }
 
     public PersonData() { }
 
-    public PersonData(string name, ulong? discordId = null)
+    public PersonData(string name, ulong discordId)
     {
         Name = name;
         DiscordId = discordId;
@@ -52,7 +52,7 @@ public class PersonData : IEmbeddable
         return new DiscordEmbedBuilder()
             .AddField(nameof(Name), Name.ToString(), false)
             .AddField(nameof(Id), Id.ToString(), false)
-            .AddField(nameof(DiscordId), (DiscordId is null ? 0 : DiscordId.Value).ToString(), false)
+            .AddField(nameof(DiscordId), DiscordId.ToString(), false)
             .AddField($"{nameof(Record)} Count", (Record is null ? 0 : Record.Count).ToString(), false);
     }
 }

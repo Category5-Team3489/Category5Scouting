@@ -15,8 +15,6 @@ public class EventModule : BaseCommandModule
     [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx)
     {
-        Console.WriteLine("[Cat5Bot] !event");
-
         var msg = await new DiscordMessageBuilder()
             .WithEmbed(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Yellow)
@@ -157,6 +155,7 @@ public class EventModule : BaseCommandModule
     }
     private async Task Delete(CommandContext ctx, DiscordMessage msg, InteractivityExtension interactivity, ComponentInteractionCreateEventArgs result)
     {
+        // TODO set initator
         await result.Interaction.CreateResponseAsync(
             InteractionResponseType.ChannelMessageWithSource,
             new DiscordInteractionResponseBuilder()

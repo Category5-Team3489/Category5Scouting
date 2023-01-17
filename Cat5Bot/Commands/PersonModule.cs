@@ -13,6 +13,7 @@ public class PersonModule : BaseCommandModule
 
     // TODO !person info command
     // TODO add supplying discordId instead of member, someone may not have discord for the time being
+    // TODO delete person by name and discord id
 
     #region GroupCommand
     [GroupCommand, RequireGuild]
@@ -28,8 +29,6 @@ public class PersonModule : BaseCommandModule
     [GroupCommand, RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task Command(CommandContext ctx, DiscordMember member, [RemainingText] string name)
     {
-        Console.WriteLine("[Cat5Bot] !person");
-
         if (name.Length < 1 || name.Length > 32)
         {
             await ctx.RespondAsync(new DiscordEmbedBuilder()
@@ -76,8 +75,6 @@ public class PersonModule : BaseCommandModule
     [Command("list"), RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task ListCommand(CommandContext ctx)
     {
-        Console.WriteLine("[Cat5Bot] !person list");
-
         var people = Db.GetCollection<PersonData>("people");
         people.EnsureIndex(x => x.Name);
 
@@ -120,9 +117,9 @@ public class PersonModule : BaseCommandModule
     [Command("delete"), RequireGuild, RequireRoles(RoleCheckMode.Any, "Admin", "Mentors", "Leaders")]
     public async Task DeleteCommand(CommandContext ctx, DiscordMember member)
     {
-        Console.WriteLine("[Cat5Bot] !person delete");
-
         var people = Db.GetCollection<PersonData>("people");
+        people.EnsureIndex(x => x.DiscordId);
+        people.EnsureIndex(x => x.Id);
 
         var person = people.FindOne(x => x.DiscordId == member.Id);
 
