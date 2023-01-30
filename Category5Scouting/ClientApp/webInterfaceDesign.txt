@@ -1,0 +1,43 @@
+Password on log in page
+
+link event blue alliance page
+
+Home
+    Tutorial
+    FAQ
+
+Team Sheets
+    Team Number Dropdown
+    <BOX WITH THE SELECTED TEAM'S SHEET LOADED>
+
+    Team Number
+    Team Name
+    City, State Country
+    Abstract Info Text Box
+    <QUESTIONS>
+    /* Not important
+    maybe area to add matches with match description
+    {
+        Title
+
+        description
+    }
+    */
+
+Rankings
+    Accordians (sorted by rank)
+        <RANK> | Team <NUMBER> | <TBA LINK>
+        -2 | -1 | 0 | +1 | +2
+        <TEAM SHEETS LINK>
+        // Add more data from sheets as put in
+        // Overview, chassis type
+        // Abstract, taken from a single text box in team sheets
+
+Settings
+
+Admin Panel
+    Event key for TBA
+    Load TBA data into database
+    // only tba data loaded is teams that are going to a certain event
+    Wipe data
+    cookie clicker toggle, locks cookie count to negative infinity
