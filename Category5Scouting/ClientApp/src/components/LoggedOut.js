@@ -3,7 +3,7 @@ import React from 'react';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 
-import { ScouterSelection } from './ScouterSelection';
+import { ScouterSelection } from './elements/ScouterSelection';
 
 export function LoggedOut( {state} ) {
   return (

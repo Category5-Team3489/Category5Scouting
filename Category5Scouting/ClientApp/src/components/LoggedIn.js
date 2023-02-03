@@ -1,20 +1,37 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 
-import { Clicker } from './Clicker';
-import { Home } from './Home';
 import { Menu } from './Menu';
-import { Rankings } from './Rankings';
-import { Scout } from './Scout';
-import { Settings } from './Settings';
-import { UsefulLinks } from './UsefulLinks';
-import { WeatherForecast } from './WeatherForecast';
+
+import { Home } from './pages/Home';
+import { TeamSheets } from './pages/TeamSheets';
+import { Rankings } from './pages/Rankings';
+import { Settings } from './pages/Settings';
+
+import { UsefulLinks } from './other/UsefulLinks';
+import { WeatherForecast } from './other/WeatherForecast';
+import { Clicker } from './other/Clicker';
+import { Scout } from './other/Scout';
 
 const GetRoutes = (state) => [
   {
     index: true,
     element: <Home />
   },
+  // Main Pages
+  {
+    path: "/team-sheets",
+    element: <TeamSheets />
+  },
+  {
+    path: "/rankings",
+    element: <Rankings state={state} />
+  },
+  {
+    path: "/settings",
+    element: <Settings state={state} />
+  },
+  // Other Pages
   {
     path: "/weather-forecast",
     element: <WeatherForecast />
@@ -30,14 +47,6 @@ const GetRoutes = (state) => [
   {
     path: "/clicker",
     element: <Clicker state={state} />
-  },
-  {
-    path: "/settings",
-    element: <Settings state={state} />
-  },
-  {
-    path: "/rankings",
-    element: <Rankings state={state} />
   }
 ];
 

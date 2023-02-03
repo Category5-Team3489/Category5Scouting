@@ -27,7 +27,7 @@ export default function App() {
   return (
     <>
       {
-        // Conditionally render the logged in or logged out
+        // Conditionally render the logged in or logged out pages
         isLoggedOut() ? (
           <LoggedOut state={state}/>
         ) : (

@@ -11,7 +11,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-import clickSfx from '../sounds/click.wav';
+import clickSfx from '../../sounds/click.wav';
 
 export const Clicker = ( {state} ) => {
   // Hook for click sound
