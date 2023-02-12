@@ -24,6 +24,8 @@ Team Sheets
     }
     */
 
+    FORUM
+
 Rankings
     Accordians (sorted by rank)
         <RANK> | Team <NUMBER> | <TBA LINK>

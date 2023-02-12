@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
+import Accordion from 'react-bootstrap/Accordion';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 
+import { PitScouting } from '../elements/PitScouting';
+
 export const TeamSheets = () => {
   return (
     <Container fluid className="p-4">
-      <Alert variant="danger">
+      <Alert variant="dark">
         <Alert.Heading>
           Team Sheets
         </Alert.Heading>
@@ -21,11 +24,29 @@ export const TeamSheets = () => {
           <option value="3">4020: Cyber Tribe</option>
         </Form.Select>
         <br />
-        <Alert.Heading>
-          Team 3489: Category 5
-          Summerville SC
-        </Alert.Heading>
       </Alert>
+
+      <Alert variant="danger">
+        <Alert.Heading>
+          Team 3489: Category 5 <br />
+          Summerville, SC, USA
+        </Alert.Heading>
+
+        <Accordion>
+          <Accordion.Item>
+            <Accordion.Header>About</Accordion.Header>
+            <Accordion.Body>
+              <Form>
+                <Form.Group className="mb-3">
+                  <Form.Control placeholder="Overview of team" as="textarea" rows={3} />
+                </Form.Group>
+              </Form>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </Alert>
+
+      <PitScouting />
     </Container>
   );
 };
