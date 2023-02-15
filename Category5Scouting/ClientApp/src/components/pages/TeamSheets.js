@@ -8,6 +8,7 @@ import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 
 import { PitScouting } from '../elements/PitScouting';
+import {MatchScouting} from '../elements/MatchScouting';
 
 export const TeamSheets = () => {
   return (
@@ -47,6 +48,9 @@ export const TeamSheets = () => {
       </Alert>
 
       <PitScouting />
+      <br />
+      <br />
+      <MatchScouting />
     </Container>
   );
 };
