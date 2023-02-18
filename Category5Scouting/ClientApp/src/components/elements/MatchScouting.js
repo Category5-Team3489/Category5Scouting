@@ -18,7 +18,7 @@ export const MatchScouting = () => {
         {name: "3", value: 3},
         {name: "4", value: 4},
         {name: "5", value: 5},
-    ]
+    ];
     return (
         <Alert variant="success">
             <Alert.Heading>
@@ -36,7 +36,15 @@ export const MatchScouting = () => {
 
     <Container>
       <Row>
-        <Col lg={true}>1 of 1</Col>
+        <Col lg={true}>
+            Grippiness
+        <br />
+        • How well does the gripper sustain being jostled?
+          <br />
+        • How well does the robot traverse the field with a game piece?
+          <br />
+        • Any other observations about the gripper's grippiness?
+        </Col>
         <Col lg={true}>Another./;;;;;;;;;;;;;;</Col>
         <Col lg={true}>And another</Col>
         <Col lg={true}>Okay one more</Col>
