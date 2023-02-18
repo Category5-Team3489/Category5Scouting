@@ -12,7 +12,7 @@ import { ReactSketchCanvas } from "react-sketch-canvas";
 const styles = {
   border: "0.0625rem solid #9c9c9c",
   borderRadius: "0.25rem",
-  width: '62%',
+  // width: '62%',
 };
 
 export const PitScouting = () => {
@@ -21,17 +21,19 @@ export const PitScouting = () => {
       <Alert.Heading>
         Pit Scouting
       </Alert.Heading>
-
+<br />
       {/* https://github.com/vinothpandian/react-sketch-canvas */}
+     <Container fluid>
       <ReactSketchCanvas
         backgroundImage="https://i.imgur.com/7IqCvi0.png"
         style={styles}
-        width="100%"
-        height="500px"
-        preserveBackgroundImageAspectRatio="xMinYMin meet"
+        // width="100%"
+        height="320px"
+        preserveBackgroundImageAspectRatio="xMidYMid meet"
         strokeWidth={4}
         strokeColor="red"
       />
+      </Container>
       <br />
 
       {/* BEST THINGS */}
