@@ -51,9 +51,7 @@ export const PitScouting = () => {
         <Form.Label>
           <b>Gripper?</b>
         </Form.Label>
-        <Form.Check label="Claw" name="Gripper" type="radio" />
-        <Form.Check label="Wheels" name="Gripper" type="radio" />
-        <Form.Check label="Other" name="Gripper" type="radio" />
+        <Form.Control placeholder="What type of gripper? Describe the design" as="textarea" rows={2} />
       </Form>
       <br />
       <Form>
@@ -72,7 +70,7 @@ export const PitScouting = () => {
           • Is it capable of extending? Any more observations:
           <br />
         </Form.Text>
-        <Form.Control placeholder="Explain" as="textarea" rows={2} />
+        <Form.Control placeholder="Describe it here" as="textarea" rows={2} />
       </Form>
       <br />
       {/* Charge Station Strategy */}

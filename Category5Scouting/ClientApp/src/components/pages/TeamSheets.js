@@ -26,7 +26,8 @@ export const TeamSheets = () => {
         </Form.Select>
         <br />
       </Alert>
-
+      <br />
+      <br />
       <Alert variant="danger">
         <Alert.Heading>
           Team 3489: Category 5 <br />
@@ -46,7 +47,8 @@ export const TeamSheets = () => {
           </Accordion.Item>
         </Accordion>
       </Alert>
-
+      <br />
+      <br />
       <PitScouting />
       <br />
       <br />

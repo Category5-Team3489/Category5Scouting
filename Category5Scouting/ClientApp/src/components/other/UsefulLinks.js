@@ -24,7 +24,7 @@ export const UsefulLinks = () => {
     { desc: "React bootstrap list group", link: "https://react-bootstrap.github.io/components/list-group/" },
     { desc: "React js hook run code on an interval", link: "https://stackoverflow.com/questions/65049812/how-to-call-a-function-every-minute-in-a-react-component" },
     { desc: "Force react to route to a page", link: "https://stackoverflow.com/questions/64224629/importerror-usenavigate-is-not-exported-from-react-router-dom" },
-
+    
   ]
 
   return (
