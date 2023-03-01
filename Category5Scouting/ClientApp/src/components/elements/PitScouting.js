@@ -14,6 +14,9 @@ const styles = {
   borderRadius: "0.25rem",
   // width: '62%',
 };
+const textStyles = {
+  color: "black"
+}
 
 export const PitScouting = () => {
   return (
@@ -61,7 +64,7 @@ export const PitScouting = () => {
         {/* <Form.Check label="NO ARM" name="group1" type="radio" />
         <Form.Check label="" name="group1" type="radio" />
         <Form.Check label="Other?" name="group1" type="radio" /> */}
-        <Form.Text>
+        <Form.Text style={textStyles}>
           <br />
           • Explain what the arm's functionality is.
           <br />
@@ -78,7 +81,7 @@ export const PitScouting = () => {
         <Form.Label>
           <b>Charge Station Strategy</b>
         </Form.Label>
-        <Form.Text>
+        <Form.Text style={textStyles}>
             <br />
         • Does the robot attempt to dock on the Charging Station?
           <br />
