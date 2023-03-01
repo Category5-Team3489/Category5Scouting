@@ -288,7 +288,7 @@ export const MatchScouting = () => {
 
             <Form.Text style={styles}>
               <br />
-              <p>Add anything that you feel may be important for Van or the Drive Team to parse through these teams. <i>This is very important!</i></p>
+              <p>Add anything that you feel may be important for Van or the Drive Team. <i>This is very important!</i></p>
               <Form.Control placeholder="Your observations" as="textarea" rows={3} />
             </Form.Text>
           </Col>
