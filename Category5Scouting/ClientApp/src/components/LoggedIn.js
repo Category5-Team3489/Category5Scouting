@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { TeamSheets } from './pages/TeamSheets';
 import { Rankings } from './pages/Rankings';
 import { Settings } from './pages/Settings';
+import { Dashboard } from './pages/Dashboard';
 
 import { UsefulLinks } from './other/UsefulLinks';
 import { WeatherForecast } from './other/WeatherForecast';
@@ -26,6 +27,10 @@ const GetRoutes = (state) => [
   {
     path: "/rankings",
     element: <Rankings state={state} />
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />
   },
   {
     path: "/settings",
@@ -58,10 +63,12 @@ export function LoggedIn( {state} ) {
       
       {/* Render the appropriate components based on the url */}
       <Routes>
-        {GetRoutes(state).map((route, index) => {
-          const { element, ...rest } = route;
-          return <Route key={index} {...rest} element={element} />;
-        })}
+        {
+          GetRoutes(state).map((route, index) => {
+            const { element, ...rest } = route;
+            return <Route key={index} {...rest} element={element} />;
+          })
+        }
       </Routes>
     </>
   );

@@ -14,8 +14,9 @@ export function LoggedOut( {state} ) {
       </Alert>
       
       <ScouterSelection
-      scouterIdState={state.scouterIdState}
-      scouterNameState={state.scouterNameState}/>
+        scouterIdState={state.scouterIdState}
+        scouterNameState={state.scouterNameState}
+      />
     </Container>
   );
 };

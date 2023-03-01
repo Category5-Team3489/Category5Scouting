@@ -28,6 +28,10 @@ export function Menu() {
                 <Nav.Link>Rankings</Nav.Link>
               </LinkContainer>
 
+              <LinkContainer to="/dashboard">
+                <Nav.Link>Dashboard</Nav.Link>
+              </LinkContainer>
+
               <NavDropdown title="Other" id="basic-nav-dropdown" menuVariant="dark">
                 <LinkContainer to="/useful-links">
                   <NavDropdown.Item>Useful Links</NavDropdown.Item>

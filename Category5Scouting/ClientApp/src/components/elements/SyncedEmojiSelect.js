@@ -29,7 +29,7 @@ export const SyncedEmojiSelect = () => {
 
   return (
     <Stack direction="horizontal" gap={3}>
-    <ButtonGroup>
+      <ButtonGroup>
         {radios.map((radio, idx) => (
           <ToggleButton
             key={idx}

@@ -1,4 +1,5 @@
-string Cat5BotTokenPath = $"{Directory.GetCurrentDirectory()}/Cat5BotToken.secret";
+#region Cat5Bot
+// string Cat5BotTokenPath = $"{Directory.GetCurrentDirectory()}/Cat5BotToken.secret";
 
 /*
 if (File.Exists(Cat5BotTokenPath))
@@ -9,18 +10,18 @@ if (File.Exists(Cat5BotTokenPath))
     return;
 }
 */
+#endregion Cat5Bot
 
+#region Category5Scouting
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-// builder.Services.AddControllersWithViews(); For controllers
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseStaticFiles();
 app.UseRouting();
-// app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}"); For controllers
+
+ConcurrentDictionary<string, string> e; // TODO
 
 Processor<Context> processor = new();
 var processorTask = processor.RunAsync();
@@ -122,3 +123,4 @@ app.MapFallbackToFile("index.html");
 
 var serverTask = app.Environment.IsDevelopment() ? app.RunAsync("http://*:5194") : app.RunAsync("http://*:44464");
 await processorTask;
+#endregion Category5Scouting
