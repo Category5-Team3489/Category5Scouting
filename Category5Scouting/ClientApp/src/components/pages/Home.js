@@ -10,7 +10,7 @@ export function Home() {
         <Alert.Heading>
           Welcome to the 3489 Scouting App!
         </Alert.Heading>
-        Tutorial and FAQ coming soon...
+        Coming soon to a robotics team near you!
       </Alert>
     </Container>
   );

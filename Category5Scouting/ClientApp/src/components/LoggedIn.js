@@ -5,14 +5,13 @@ import { Menu } from './Menu';
 
 import { Home } from './pages/Home';
 import { TeamSheets } from './pages/TeamSheets';
-import { Rankings } from './pages/Rankings';
-import { Settings } from './pages/Settings';
+// import { Rankings } from './archive/Rankings';
+// import { Settings } from './archive/Settings';
 import { Dashboard } from './pages/Dashboard';
 
 import { UsefulLinks } from './other/UsefulLinks';
-import { WeatherForecast } from './other/WeatherForecast';
-import { Clicker } from './other/Clicker';
-import { Scout } from './other/Scout';
+// import { WeatherForecast } from './archive/WeatherForecast';
+// import { Clicker } from './archive/Clicker';
 
 const GetRoutes = (state) => [
   {
@@ -24,35 +23,31 @@ const GetRoutes = (state) => [
     path: "/team-sheets",
     element: <TeamSheets />
   },
-  {
-    path: "/rankings",
-    element: <Rankings state={state} />
-  },
+  // {
+  //   path: "/rankings",
+  //   element: <Rankings state={state} />
+  // },
   {
     path: "/dashboard",
     element: <Dashboard />
   },
-  {
-    path: "/settings",
-    element: <Settings state={state} />
-  },
+  // {
+  //   path: "/settings",
+  //   element: <Settings state={state} />
+  // },
   // Other Pages
-  {
-    path: "/weather-forecast",
-    element: <WeatherForecast />
-  },
+  // {
+  //   path: "/weather-forecast",
+  //   element: <WeatherForecast />
+  // },
   {
     path: "/useful-links",
     element: <UsefulLinks />
   },
-  {
-    path: "/scout",
-    element: <Scout />
-  },
-  {
-    path: "/clicker",
-    element: <Clicker state={state} />
-  }
+  // {
+  //   path: "/clicker",
+  //   element: <Clicker state={state} />
+  // }
 ];
 
 export function LoggedIn( {state} ) {

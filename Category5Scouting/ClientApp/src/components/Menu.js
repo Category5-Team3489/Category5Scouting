@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Form, NavDropdown } from 'react-bootstrap';
+import { NavDropdown } from 'react-bootstrap';
 
 export function Menu() {
   return (
@@ -24,9 +24,9 @@ export function Menu() {
                 <Nav.Link>Team Sheets</Nav.Link>
               </LinkContainer>
 
-              <LinkContainer to="/rankings">
+              {/* <LinkContainer to="/rankings">
                 <Nav.Link>Rankings</Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
 
               <LinkContainer to="/dashboard">
                 <Nav.Link>Dashboard</Nav.Link>
@@ -37,25 +37,21 @@ export function Menu() {
                   <NavDropdown.Item>Useful Links</NavDropdown.Item>
                 </LinkContainer>
 
-                <LinkContainer to="/weather-forecast">
+                {/* <LinkContainer to="/weather-forecast">
                   <NavDropdown.Item>Weather forecast</NavDropdown.Item>
-                </LinkContainer>
+                </LinkContainer> */}
 
-                <LinkContainer to="/clicker">
+                {/* <LinkContainer to="/clicker">
                   <NavDropdown.Item>Clicker</NavDropdown.Item>
-                </LinkContainer>
-
-                <LinkContainer to="/scout">
-                  <NavDropdown.Item>Scout</NavDropdown.Item>
-                </LinkContainer>
+                </LinkContainer> */}
               </NavDropdown>
             </Nav>
             
-            <Nav>
+            {/* <Nav>
               <LinkContainer to="/settings">
                 <Nav.Link>Settings</Nav.Link>
               </LinkContainer>
-            </Nav>
+            </Nav> */}
 
           </Navbar.Collapse>
         </Container>

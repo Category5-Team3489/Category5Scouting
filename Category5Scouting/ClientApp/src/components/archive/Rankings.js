@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Accordion, ButtonGroup, Col, Row, Stack, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Accordion, ButtonGroup, Stack, ToggleButton } from 'react-bootstrap';
 
-import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 
 export function Rankings() {
