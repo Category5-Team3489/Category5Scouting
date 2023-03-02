@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { TeamSheets } from './pages/TeamSheets';
 import { Rankings } from './pages/Rankings';
 import { Settings } from './pages/Settings';
+import { Dashboard } from './pages/Dashboard';
 
 import { UsefulLinks } from './other/UsefulLinks';
 import { WeatherForecast } from './other/WeatherForecast';
@@ -30,6 +31,10 @@ const GetRoutes = (state) => [
   {
     path: "/settings",
     element: <Settings state={state} />
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />
   },
   // Other Pages
   {

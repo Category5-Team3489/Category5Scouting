@@ -15,21 +15,6 @@ const textStyles = {
   color: "black"
 }
 
-{/* <Row>
-          <Col>
-            <Alert variant="alert">
-              <Container fluid>
-                <Alert.Heading>
-                  <b>DNP?</b>
-                </Alert.Heading>
-                <Form.Text style={textStyles}>
-
-                </Form.Text>
-              </Container>
-            </Alert>
-          </Col>
-        </Row> */}
-
 export const DNP = () => {
     return (
         <Alert variant="danger">

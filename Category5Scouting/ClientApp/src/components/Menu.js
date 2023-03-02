@@ -6,6 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Form, NavDropdown } from 'react-bootstrap';
 
+function changeBackground(color) {
+  document.body.style.background = color;
+}
+
+window.addEventListener("load",function() { changeBackground('gray') });
+
 export function Menu() {
   return (
     <header>
@@ -26,6 +32,10 @@ export function Menu() {
 
               <LinkContainer to="/rankings">
                 <Nav.Link>Rankings</Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to="/dashboard">
+                <Nav.Link>Dashboard</Nav.Link>
               </LinkContainer>
 
               <NavDropdown title="Other" id="basic-nav-dropdown" menuVariant="dark">

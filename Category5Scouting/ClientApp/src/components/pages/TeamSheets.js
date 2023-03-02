@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import { PitScouting } from '../elements/PitScouting';
 import {MatchScouting} from '../elements/MatchScouting';
 import {DNP} from '../elements/DNP';
+import { Dashboard } from './Dashboard';
 
 export const TeamSheets = () => {
   return (
