@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Category5Scouting;
 
