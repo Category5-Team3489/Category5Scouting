@@ -11,7 +11,7 @@ import Form from 'react-bootstrap/Form';
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import { SyncedEmojiSelect as SyncedEmojiSelect } from './SyncedEmojiSelect';
 
-const styles = {
+const textStyles = {
   color: "black"
 }
 
@@ -47,7 +47,7 @@ export const MatchScouting = () => {
                 <b>Auto Grippiness</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • How well does the gripper withstand starting/stopping quickly?
                 <br />
@@ -70,7 +70,7 @@ export const MatchScouting = () => {
                 <b>Auto Placement</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • How well does the robot line up on the node?
                 <br />
@@ -97,7 +97,7 @@ export const MatchScouting = () => {
                 <b>Auto Navigability (How well they move around during auto)</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • Does the robot stay on track well?
                 <br />
@@ -134,7 +134,7 @@ export const MatchScouting = () => {
                 <b>Game Piece Grippiness</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • How well does the gripper withstand being jostled?
                 <br />
@@ -158,7 +158,7 @@ export const MatchScouting = () => {
                 <b>Game Piece Placement</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • How well does the robot line up on the node?
                 <br />
@@ -184,7 +184,7 @@ export const MatchScouting = () => {
                 <b>Elusive Driving</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • Do they avoid opposing defense well?
                 <br />
@@ -208,7 +208,7 @@ export const MatchScouting = () => {
                 <b>Defensive Driving (Defending Other Teams)</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
               <br />
                   • Do they avoid opposing defense well?
                 <br />
@@ -234,7 +234,7 @@ export const MatchScouting = () => {
                 <b>Drive Team Communication/Coordination</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • Does their drive team get along with other drive teams? Do they seem bossy and rude (or timid and unassuming)?
                 <br />
@@ -258,7 +258,7 @@ export const MatchScouting = () => {
                 <b>Charge Station Parking (and balancing)</b>
               </Form.Label>
 
-              <Form.Text style={styles}>
+              <Form.Text style={textStyles}>
                 <br />
                   • Do they leave space for other robots when parking?
                 <br />
@@ -286,7 +286,7 @@ export const MatchScouting = () => {
               <b>Additional Notes:</b>
             </Form.Label>
 
-            <Form.Text style={styles}>
+            <Form.Text style={textStyles}>
               <br />
               <p>Add anything that you feel may be important for Van or the Drive Team. <i>This is very important!</i></p>
               <Form.Control placeholder="Your observations" as="textarea" rows={3} />

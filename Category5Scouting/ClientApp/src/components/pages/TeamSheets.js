@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 
 import { PitScouting } from '../elements/PitScouting';
 import {MatchScouting} from '../elements/MatchScouting';
+import {DNP} from '../elements/DNP';
 
 export const TeamSheets = () => {
   return (
@@ -53,6 +54,7 @@ export const TeamSheets = () => {
       <br />
       <br />
       <MatchScouting />
+      <DNP />
     </Container>
   );
 };
