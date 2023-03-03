@@ -29,65 +29,1331 @@ export function Dashboard() {
         <Container fluid>
             <Row>
                 <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>281</b>
+                                <br />
+                                The GreenVillains
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>342</b>
+                                <br />
+                                Burning Magnetos
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>343</b>
+                                <br />
+                                Metal-In-Motion
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>1051</b>
+                                <br />
+                                Technical Terminators
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>1102</b>
+                                <br />
+                                The GreenVillains
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>1287</b>
+                                <br />
+                                The GreenVillains
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>1293</b>
+                                <br />
+                                The GreenVillains
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header">
+                                <b>1319</b>
+                                <br />
+                                The GreenVillains
+                            </h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>343</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>281</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
+                <br />
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-header"><b>342</b></h4>
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Navigability: </li>
+                                    </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
+                        </div>
+                    </div>
+                </Col>
+
+                <Col>
                     <br />
                     <div class="card bg-light">
                         <div class="card-body">
                             <h4 class="card-header"><b>342</b></h4>
-                            <ul class="list-group">
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
                                 <Accordion>
-                                    <Accordion.Item>
-                                        <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
                                         <Accordion.Body>
                                             <li class="list-group-item">Grippiness: </li>
                                             <li class="list-group-item">Placement: </li>
                                             <li class="list-group-item">Navigability: </li>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
+                                    </Accordion.Body>
                                 </Accordion>
-                            </ul>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <li class="list-group-item">Grippiness: </li>
+                                            <li class="list-group-item">Placement: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
+                                        </Accordion.Body>
+                                </Accordion>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
                         </div>
                     </div>
                 </Col>
+            </Row>
+
+            <Row>
+                <Col></Col>
+
                 <Col>
                 <br />
                     <div class="card bg-light">
                         <div class="card-body">
                             <h4 class="card-header"><b>342</b></h4>
-                            <ul class="list-group">
+                            <div class="card-header">
+                                <h7>DNP?</h7>
+                                <br />
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            </div>
                                 <Accordion>
-                                    <Accordion.Item>
-                                        <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                    <Accordion.Header><h6>Auto:</h6></Accordion.Header>
                                         <Accordion.Body>
                                             <li class="list-group-item">Grippiness: </li>
                                             <li class="list-group-item">Placement: </li>
                                             <li class="list-group-item">Navigability: </li>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
+                                    </Accordion.Body>
                                 </Accordion>
-                            </ul>
-                        </div>
-                    </div>
-                </Col>
-                <Col>
-                <br />
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h4 class="card-header"><b>342</b></h4>
-                            <ul class="list-group">
+                            <div class="dropdown-divider"></div>
                                 <Accordion>
-                                    <Accordion.Item>
-                                        <Accordion.Header><h6>Auto:</h6></Accordion.Header>
+                                    <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
                                         <Accordion.Body>
                                             <li class="list-group-item">Grippiness: </li>
                                             <li class="list-group-item">Placement: </li>
-                                            <li class="list-group-item">Navigability: </li>
+                                            <li class="list-group-item">Elusive Driving: </li>
+                                            <li class="list-group-item">Defensive Driving: </li>
+                                            <li class="list-group-item">Drive Team Coordination: </li>
+                                            <li class="list-group-item">Charge Station Balancing: </li>
                                         </Accordion.Body>
-                                    </Accordion.Item>
                                 </Accordion>
-                            </ul>
+                            <div class="dropdown-divider"></div>
+                                <Accordion>
+                                    <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
+                                        <Accordion.Body>
+                                            <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
+                                        </Accordion.Body>
+                                </Accordion>
                         </div>
                     </div>
                 </Col>
+
+                <Col></Col>
             </Row>
         </Container>
     )

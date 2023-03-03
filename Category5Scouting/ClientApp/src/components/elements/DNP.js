@@ -22,6 +22,8 @@ export const DNP = () => {
                 <Alert.Heading>
                     <b>DNP?</b>
                     <br />
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                    <br />
                     ---------------------------------
                 </Alert.Heading>
                 <Form.Text style={textStyles}>
