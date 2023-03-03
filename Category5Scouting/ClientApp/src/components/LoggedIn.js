@@ -21,7 +21,7 @@ const GetRoutes = (state) => [
   // Main Pages
   {
     path: "/team-sheets",
-    element: <TeamSheets />
+    element: <TeamSheets state={state} />
   },
   // {
   //   path: "/rankings",
@@ -29,7 +29,7 @@ const GetRoutes = (state) => [
   // },
   {
     path: "/dashboard",
-    element: <Dashboard />
+    element: <Dashboard state={state} />
   },
   // {
   //   path: "/settings",
