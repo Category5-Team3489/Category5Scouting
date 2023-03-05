@@ -1,15 +1,60 @@
 #region Cat5Bot
-// string Cat5BotTokenPath = $"{Directory.GetCurrentDirectory()}/Cat5BotToken.secret";
+/*using Cat5Bot.Data;
 
-/*
+string Cat5BotTokenPath = $"{Directory.GetCurrentDirectory()}/Cat5BotToken.secret";
+
 if (File.Exists(Cat5BotTokenPath))
 {
-    using var db = new LiteDatabase($"{Directory.GetCurrentDirectory()}/Cat5Bot.db");
+    using var db = new LiteDB.LiteDatabase($"{Directory.GetCurrentDirectory()}/Cat5Bot.db");
+
+    var people = db.GetCollection<PersonData>("people");
+    var events = db.GetCollection<EventData>("events");
+    while (true)
+    {
+        Console.WriteLine("type in a name, or enter to start");
+        string input = Console.ReadLine()!.Trim();
+        if (input != "")
+        {
+            var person = people.FindOne(x => x.Name == input);
+            if (person is null)
+            {
+                Console.WriteLine("person not found");
+            }
+            else
+            {
+                string eventIdString = Console.ReadLine()!.Trim();
+                if (int.TryParse(eventIdString, out var eventId))
+                {
+                    var @event = events.FindOne(x => x.Id == eventId);
+                    if (@event is null)
+                    {
+                        Console.WriteLine("event not found");
+                    }
+                    else
+                    {
+                        if (person.Add(eventId))
+                        {
+                            Console.WriteLine($"\"{person.Name}\" attending event with id: {eventId}");
+                        }
+                        people.Update(person);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("event id invalid");
+                }
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+
     await Category5Bot.MainAsync(File.ReadAllText(Cat5BotTokenPath), db);
     Console.ReadLine();
     return;
-}
-*/
+}*/
 #endregion Cat5Bot
 
 #region Category5Scouting
