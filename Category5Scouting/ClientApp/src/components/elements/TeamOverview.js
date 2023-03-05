@@ -1,5 +1,6 @@
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
+import { SyncedTextBox } from './SyncedTextBox';
 
 export const TeamOverview = () => {
   return (
@@ -8,11 +9,11 @@ export const TeamOverview = () => {
         Team 3489: Category 5
       </Alert.Heading>
 
-      <Form>
-        <Form.Group className="mb-3">
-          <Form.Control placeholder="Overview of team" as="textarea" rows={3} />
-        </Form.Group>
-      </Form>
+      <SyncedTextBox
+        className="mb-3"
+        placeholder="Overview of team"
+        rows={3}
+      />
     </Alert>
   );
 };

@@ -21,12 +21,28 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseRouting();
 
-ConcurrentDictionary<string, string> e; // TODO
+ConcurrentDictionary<string, string> data = new();
 
 Processor<Context> processor = new();
 var processorTask = processor.RunAsync();
 
-processor.Process("Add Default Scouters", (ctx) =>
+app.MapGet("/api/get", (string key) =>
+{
+    if (!data.TryGetValue(key, out var value))
+    {
+        value = "";
+    }
+    return value;
+});
+
+app.MapGet("/api/set", (string key, string value) =>
+{
+    data[key] = value;
+    return "";
+});
+
+#region Archive
+/*processor.Process("Add Default Scouters", (ctx) =>
 {
     ctx.scouters.AddRange(new List<Scouter>() {
         new Scouter(Guid.NewGuid().ToString(), "Mr. Blake"),
@@ -34,12 +50,11 @@ processor.Process("Add Default Scouters", (ctx) =>
         new Scouter(Guid.NewGuid().ToString(), "Connor"),
         new Scouter(Guid.NewGuid().ToString(), "Van")
     });
-});
+});*/
 
-#region Endpoints
-app.MapGet("/api/stop", () =>
+/*app.MapGet("/api/stop", () =>
 {
-    //processor.Stop();
+    processor.Stop();
 });
 
 app.MapGet("/api/scouter/list", () =>
@@ -50,7 +65,8 @@ app.MapGet("/api/scouter/list", () =>
     });
 });
 
-app.MapGet("/api/scouter/create", (string name) => {
+app.MapGet("/api/scouter/create", (string name) =>
+{
 
     return processor.Process("/api/scouter/create", (ctx) =>
     {
@@ -60,7 +76,8 @@ app.MapGet("/api/scouter/create", (string name) => {
     });
 });
 
-app.MapGet("/api/scouter/delete", (string id) => {
+app.MapGet("/api/scouter/delete", (string id) =>
+{
 
     return processor.Process("/api/scouter/delete", (ctx) =>
     {
@@ -116,7 +133,7 @@ app.MapGet("/api/weather-forecast", () =>
         Random.Shared.Next(-20, 55),
         Summaries[Random.Shared.Next(Summaries.Length)]
     ));
-});
+});*/
 #endregion Endpoints
 
 app.MapFallbackToFile("index.html");
