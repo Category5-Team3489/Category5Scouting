@@ -23,6 +23,8 @@ app.UseRouting();
 
 ConcurrentDictionary<string, string> data = new();
 
+HttpClient http = new();
+
 Processor<Context> processor = new();
 var processorTask = processor.RunAsync();
 
