@@ -13,6 +13,24 @@ if (File.Exists(Cat5BotTokenPath))
 #endregion Cat5Bot
 
 #region Category5Scouting
+#region Load TBA Data
+string TbaApiKeyPath = $"{Directory.GetCurrentDirectory()}/TbaApiKey.secret";
+IReadOnlyList<TeamSimpleSchema> teams = null!;
+if (File.Exists(TbaApiKeyPath))
+{
+    string eventKey = "2023scand";
+    string apiKey = File.ReadAllText(TbaApiKeyPath);
+    HttpClient http = new();
+    string endpoint = $"https://www.thebluealliance.com/api/v3/event/{eventKey}/teams/simple?X-TBA-Auth-Key={apiKey}";
+    string json = await http.GetStringAsync(endpoint);
+    teams = JsonSerializer.Deserialize<List<TeamSimpleSchema>>(json)!;
+/*    foreach (var team in teams)
+    {
+        team.PrintProperties();
+    }*/
+}
+#endregion Load TBA Data
+
 var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
@@ -39,6 +57,11 @@ app.MapGet("/api/set", (string key, string value) =>
 {
     data[key] = value;
     return "";
+});
+
+app.Map("/api/teams", () =>
+{
+    return Json.Serialize(teams);
 });
 
 #region Archive
@@ -134,7 +157,7 @@ app.MapGet("/api/weather-forecast", () =>
         Summaries[Random.Shared.Next(Summaries.Length)]
     ));
 });*/
-#endregion Endpoints
+#endregion Archive
 
 app.MapFallbackToFile("index.html");
 
