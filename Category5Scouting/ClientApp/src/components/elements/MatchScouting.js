@@ -59,7 +59,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Auto Grippiness" />
             </Form>
           </Col>
           <Col>
@@ -82,7 +82,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Auto Placement" />
             </Form>
           </Col>
           </Row>
@@ -109,7 +109,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Auto Navigability" />
             </Form>
           </Col>
           <Col></Col>
@@ -146,7 +146,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Game Piece Grippiness" />
               <br />
               <br />
             </Form>
@@ -170,7 +170,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Game Piece Placement" />
               <br />
               <br />
             </Form>
@@ -196,7 +196,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Elusive Driving" />
               <br />
               <br />
             </Form>
@@ -220,7 +220,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Defensive Driving" />
               <br />
               <br />
             </Form>
@@ -246,7 +246,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Drive Team Communication/Coordination" />
               <br />
               <br />
             </Form>
@@ -273,7 +273,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Your Observations" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedEmojiSelect name="Charge Station Parking" />
               <br />
               <br />
             </Form>
