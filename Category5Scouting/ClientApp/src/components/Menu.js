@@ -6,6 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavDropdown } from 'react-bootstrap';
 
+function changeBackground(color) {
+  document.body.style.background = color;
+}
+
+window.addEventListener("load", function() { changeBackground("gray") });
+
 export function Menu() {
   return (
     <header>

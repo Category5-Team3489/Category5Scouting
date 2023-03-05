@@ -10,7 +10,7 @@ import { TeamOverview } from '../elements/TeamOverview';
 export const TeamSheets = ( {state} ) => {
   return (
     <Container fluid className="p-4">
-      <TeamSelector />
+      <TeamSelector selectedTeamState={state.selectedTeamState} />
       <br />
       <br />
       <TeamOverview />
