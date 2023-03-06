@@ -71,7 +71,7 @@ export const Dashboard = ({selectedTeamState}) => {
                     </Accordion.Body>
                   </Accordion>
                   <div class="dropdown-divider"></div>
-                  <Accordion>
+                  <Accordion.Header>
                     <Accordion.Header><h6>Strategy Notes</h6></Accordion.Header>
                     <Accordion.Body>
                       <SyncedTextBox
@@ -80,7 +80,7 @@ export const Dashboard = ({selectedTeamState}) => {
                         name={team.team_number}
                       />
                     </Accordion.Body>
-                  </Accordion>
+                  </Accordion.Header>
                   <div class="dropdown-divider"></div>
                   <Accordion>
                     <Accordion.Header><h6>DNP?</h6></Accordion.Header>
