@@ -40,8 +40,21 @@ export const Dashboard = ({selectedTeamState}) => {
                   <Accordion>
                     <Accordion.Header><h6>Auto</h6></Accordion.Header>
                     <Accordion.Body>
-                      <li class="list-group-item">Grippiness: </li>
-                      <li class="list-group-item">Placement: </li>
+                      <li class="list-group-item">Grippiness: 
+                      <SyncedTextBox
+                  placeholder="Overview of team"
+                  rows={3}
+                  name={team.team_number + "Auto Grippiness"}
+                />
+                </li>
+                      <li class="list-group-item">Placement: 
+                      <SyncedTextBox
+                  placeholder="Overview of team"
+                  rows={3}
+                  name={team.team_number + "Auto Placement"}
+                />
+                
+                </li>
                       <li class="list-group-item">Navigability: </li>
                     </Accordion.Body>
                   </Accordion>
@@ -66,6 +79,13 @@ export const Dashboard = ({selectedTeamState}) => {
                         rows={3}
                         name={team.team_number}
                       />
+                    </Accordion.Body>
+                  </Accordion>
+                  <div class="dropdown-divider"></div>
+                  <Accordion>
+                    <Accordion.Header><h6>DNP?</h6></Accordion.Header>
+                    <Accordion.Body>
+                      
                     </Accordion.Body>
                   </Accordion>
                   {/* {team.city}

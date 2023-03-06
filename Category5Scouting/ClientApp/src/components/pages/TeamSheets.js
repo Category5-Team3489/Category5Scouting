@@ -6,6 +6,7 @@ import { PitScouting } from '../elements/PitScouting';
 import { MatchScouting } from '../elements/MatchScouting';
 import { TeamSelector } from '../elements/TeamSelector';
 import { TeamOverview } from '../elements/TeamOverview';
+import { DNP } from '../elements/DNP';
 
 export const TeamSheets = ( {state} ) => {
   let isTeamSelected = () => state.selectedTeamState.get() != null;
@@ -25,6 +26,9 @@ export const TeamSheets = ( {state} ) => {
             <br />
             <br />
             <MatchScouting selectedTeamState={state.selectedTeamState} />
+            <br />
+            <br />
+            <DNP />
           </>
         ) : (
           <>
