@@ -6,21 +6,26 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { ButtonGroup, Stack, ToggleButton } from 'react-bootstrap';
 
-export const SyncedNumberSelect = () => {
+export const SyncedNumberSelect = ( {name} ) => {
   const [radioValue, setRadioValue] = useState(0);
 
   const radios = [
-    { name: "😭", value: -2 },
-    { name: "😢", value: -1 },
-    { name: "😐", value: 0 },
-    { name: "😁", value: 1 },
-    { name: "😍", value: 2 },
+    { value: 1 },
+    { value: 2 },
+    { value: 3 },
+    { value: 4 },
+    { value: 5 },
+    { value: 6 },
+    { value: 7 },
+    { value: 8 },
+    { value: 9 },
+    { value: 10 },
   ];
 
   let getVariant = (value) => {
-    if (value > 0) {
+    if (value >= 8) {
       return 'outline-success';
-    } else if (value < 0) {
+    } else if (value <= 3) {
       return 'outline-danger';
     } else {
       return 'outline-secondary';
@@ -29,11 +34,11 @@ export const SyncedNumberSelect = () => {
 
   return (
     <Stack direction="horizontal" gap={3}>
-      <ButtonGroup>
+    <ButtonGroup>
         {radios.map((radio, idx) => (
           <ToggleButton
             key={idx}
-            id={idx}
+            id={name + idx}
             type="radio"
             variant={getVariant(radio.value)}
             value={radio.value}
@@ -41,7 +46,7 @@ export const SyncedNumberSelect = () => {
             onChange={(e) => setRadioValue(e.currentTarget.value)}
           >
             <h1>
-              {radio.name}
+              {radio.value}
             </h1>
           </ToggleButton>
         ))}

@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Spinner from 'react-bootstrap/Spinner';
 
-export const SyncedTextBox = ( {className, placeholder, rows, name} ) => {
+export const SyncedTextBox = ( {placeholder, rows, name} ) => {
   const [remoteValue, setRemoteValue] = useState("");
   const [isRemoteDirty, setRemoteDirty] = useState(true);
   const [isLocalDirty, setLocalDirty] = useState(false);
@@ -66,8 +66,8 @@ export const SyncedTextBox = ( {className, placeholder, rows, name} ) => {
 
   return (
     <Form>
-      {isLocalDirty ? (<Spinner animation="border" variant="danger" size="sm" />) : (<>Saved</>)}
-      <Form.Group className={className}>
+      {isLocalDirty ? (<Spinner animation="border" variant="secondary" size="sm" />) : (<>Saved</>)}
+      <Form.Group>
         <Form.Control
           placeholder={placeholder}
           as="textarea"

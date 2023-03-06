@@ -15,7 +15,7 @@ export default function App() {
   function State() {
     // this.scouterIdState = new StateHook("");
     // this.scouterNameState = new StateHook("");
-    this.selectedTeamState = new StateHook(undefined);
+    this.selectedTeamState = new StateHook(null);
   }
   
   // Create state object

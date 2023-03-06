@@ -18,8 +18,8 @@ export const Dashboard = ( {state} ) => {
         <Alert.Heading>
           Dashboard
         </Alert.Heading>
-        {teams.map((team, i) =>
-          <Alert key={i}>
+        {teams.map((team, idx) =>
+          <Alert key={idx}>
             {team.nickname}
             <br />
             {team.team_number}

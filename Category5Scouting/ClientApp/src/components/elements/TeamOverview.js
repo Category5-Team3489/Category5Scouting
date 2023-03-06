@@ -10,10 +10,9 @@ export const TeamOverview = ( {selectedTeamState} ) => {
       </Alert.Heading>
 
       <SyncedTextBox
-        className="mb-3"
         placeholder="Overview of team"
         rows={3}
-        name={selectedTeamState.get().team_number + " " + "overview"}
+        name={selectedTeamState.get().team_number + "overview"}
       />
     </Alert>
   );

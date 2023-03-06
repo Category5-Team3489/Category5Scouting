@@ -21,10 +21,10 @@ export const TeamSheets = ( {state} ) => {
             <TeamOverview selectedTeamState={state.selectedTeamState} />
             <br />
             <br />
-            <PitScouting />
+            <PitScouting selectedTeamState={state.selectedTeamState} />
             <br />
             <br />
-            <MatchScouting />
+            <MatchScouting selectedTeamState={state.selectedTeamState} />
           </>
         ) : (
           <>
