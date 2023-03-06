@@ -12,11 +12,15 @@ export const TeamSelector = ( {selectedTeamState} ) => {
   }, []);
 
   let getSelectedTeam = () => {
-    return selectedTeamState.get();
+    let selectedTeam = selectedTeamState.get();
+    if (selectedTeam == null) {
+      return 0;
+    }
+    return selectedTeam;
   }
 
-  let setSelectedTeam = (team) => {
-    selectedTeamState.set(team);
+  let setSelectedTeam = (team_number) => {
+    selectedTeamState.set(teams.find(t => t.team_number == team_number));
   }
   
   return (
@@ -26,10 +30,10 @@ export const TeamSelector = ( {selectedTeamState} ) => {
       </Alert.Heading>
       Please select the team you would like to scout
       <Form.Select
-        value={getSelectedTeam()}
+        value={getSelectedTeam().team_number}
         onChange={(e) => {setSelectedTeam(e.target.value)}}
       >
-        <option key="" value={undefined}>Select team</option>
+        <option key="" value={0}>Select team</option>
         {teams.sort((a, b) => a.team_number - b.team_number).map(team =>
           <option key={team.team_number} value={team.team_number}>
             {team.team_number}: {team.nickname}

@@ -9,7 +9,7 @@ import Form from 'react-bootstrap/Form';
 
 
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import { SyncedEmojiSelect as SyncedEmojiSelect } from './SyncedEmojiSelect';
+import { SyncedNumberSelect } from './SyncedNumberSelect';
 
 export const MatchScouting = () => {
   const ranks = [
@@ -54,7 +54,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Gripper Grippiness?" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedNumberSelect />
             </Form>
           </Col>
           <Col>
@@ -75,7 +75,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Gripper Grippiness?" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedNumberSelect />
             </Form>
           </Col>
           <Col>
@@ -96,7 +96,7 @@ export const MatchScouting = () => {
                 <Form.Control placeholder="Gripper Grippiness?" as="textarea" rows={3} />
               </Form.Text>
               <br />
-              <SyncedEmojiSelect />
+              <SyncedNumberSelect />
             </Form>
           </Col>
         </Row>

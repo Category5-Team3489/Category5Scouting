@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { ButtonGroup, Stack, ToggleButton } from 'react-bootstrap';
 
-export const SyncedEmojiSelect = () => {
+export const SyncedNumberSelect = () => {
   const [radioValue, setRadioValue] = useState(0);
 
   const radios = [

@@ -1,25 +1,32 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 import Form from 'react-bootstrap/Form';
+import Spinner from 'react-bootstrap/Spinner';
 
-export const SyncedTextBox = ( {className, placeholder, rows, key} ) => {
+export const SyncedTextBox = ( {className, placeholder, rows, name} ) => {
   const [remoteValue, setRemoteValue] = useState("");
-  const [localValue, setLocalValue] = useState("");
-  const [hasLoaded, setLoaded] = useState(false);
-  const [isRemoteDirty, setRemoteDirty] = useState(false);
+  const [isRemoteDirty, setRemoteDirty] = useState(true);
+  const [isLocalDirty, setLocalDirty] = useState(false);
 
   const textareaRef = useRef();
 
+  useEffect(() => {
+    setRemoteValue("");
+    setRemoteDirty(true);
+    setLocalDirty(false);
+  }, [name]);
+
   let load = () => {
-    fetch("api/get?key=" + encodeURIComponent(key))
+    fetch("api/get?key=" + encodeURIComponent(name))
       .then(response => response.text())
       .then(data => {
-        if (!hasLoaded) {
-          setLoaded(true);
-          setTextareaValue(data);
-        }
-        else {
-          if (data != remoteValue) {
+        if (data != remoteValue) {
+          if (isLocalDirty) {
+            if (data == getTextareaValue()) {
+              setLocalDirty(false);
+            }
+          }
+          else {
             setRemoteDirty(true);
           }
         }
@@ -28,24 +35,23 @@ export const SyncedTextBox = ( {className, placeholder, rows, key} ) => {
       });
   }
   let save = () => {
-    fetch("api/set?key=" + key + "&value=" + encodeURIComponent(getTextareaValue()));
+    fetch("api/set?key=" + name + "&value=" + encodeURIComponent(getTextareaValue()));
   }
 
   let getTextareaValue = () => {
     return textareaRef.current.value;
   }
   let setTextareaValue = (value) => {
-    setLocalValue(value);
     textareaRef.current.value = value;
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       load();
-    }, 500);
+    }, 250);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [remoteValue, isRemoteDirty, isLocalDirty]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,23 +59,22 @@ export const SyncedTextBox = ( {className, placeholder, rows, key} ) => {
         setRemoteDirty(false);
         setTextareaValue(remoteValue);
       }
-    }, 500);
+    }, 250);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [remoteValue, isRemoteDirty, isLocalDirty]);
 
   return (
     <Form>
+      {isLocalDirty ? (<Spinner animation="border" variant="danger" size="sm" />) : (<>Saved</>)}
       <Form.Group className={className}>
         <Form.Control
           placeholder={placeholder}
           as="textarea"
           rows={rows}
           onChange={() => {
-            if (localValue != getTextareaValue()) {
-              setLocalValue(getTextareaValue());
-              save();
-            }
+            setLocalDirty(true);
+            save();
           }}
           ref={textareaRef}
         />

@@ -8,18 +8,30 @@ import { TeamSelector } from '../elements/TeamSelector';
 import { TeamOverview } from '../elements/TeamOverview';
 
 export const TeamSheets = ( {state} ) => {
+  let isTeamSelected = () => state.selectedTeamState.get() != null;
+
   return (
     <Container fluid className="p-4">
       <TeamSelector selectedTeamState={state.selectedTeamState} />
-      <br />
-      <br />
-      <TeamOverview />
-      <br />
-      <br />
-      <PitScouting />
-      <br />
-      <br />
-      <MatchScouting />
+      {
+        isTeamSelected() ? (
+          <>
+            <br />
+            <br />
+            <TeamOverview selectedTeamState={state.selectedTeamState} />
+            <br />
+            <br />
+            <PitScouting />
+            <br />
+            <br />
+            <MatchScouting />
+          </>
+        ) : (
+          <>
+            
+          </>
+        )
+      }
     </Container>
   );
 };
