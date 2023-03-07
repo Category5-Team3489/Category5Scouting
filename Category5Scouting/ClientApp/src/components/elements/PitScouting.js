@@ -25,7 +25,7 @@ export const PitScouting = ( {selectedTeamState} ) => {
           className=""
           placeholder="Best things"
           rows={2}
-          name={selectedTeamState.get().team_number + "best things"}
+          name={selectedTeamState.get().team_number + "Best Things"}
         />
       </Form>
       <br />
