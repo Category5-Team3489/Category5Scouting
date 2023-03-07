@@ -9,7 +9,7 @@ import Form from 'react-bootstrap/Form';
 
 
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import { SyncedNumberSelect } from './SyncedNumberSelect';
+import { SyncedNumberSelect } from '../elements/SyncedNumberSelect';
 import { SyncedTextBox } from './SyncedTextBox';
 
 const textStyles = {
