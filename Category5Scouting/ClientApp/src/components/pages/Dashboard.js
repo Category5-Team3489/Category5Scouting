@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { SyncedTextBox } from '../elements/SyncedTextBox';
+import { SyncedNumberSelect } from '../elements/SyncedNumberSelect';
 
 export const Dashboard = ({ selectedTeamState }) => {
   const [teams, setTeams] = useState([]);
@@ -46,6 +47,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Auto Grippiness"}
                         />
+                        {/* <SyncedNumberSelect name={team.team_number + "Auto Grippiness"} /> */}
                       </li>
                       <li class="list-group-item">Placement:
                         <SyncedTextBox
@@ -53,21 +55,62 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Auto Placement"}
                         />
-
                       </li>
-                      <li class="list-group-item">Navigability: </li>
+                      <li class="list-group-item">Navigability: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Auto Navigability"}
+                        />
+                      </li>
                     </Accordion.Body>
                   </Accordion>
                   <div class="dropdown-divider"></div>
                   <Accordion>
                     <Accordion.Header><h6>Tele-op</h6></Accordion.Header>
                     <Accordion.Body>
-                      <li class="list-group-item">Grippiness: </li>
-                      <li class="list-group-item">Placement: </li>
-                      <li class="list-group-item">Elusive Driving: </li>
-                      <li class="list-group-item">Defensive Driving: </li>
-                      <li class="list-group-item">Drive Team Coordination: </li>
-                      <li class="list-group-item">Charge Station Balancing: </li>
+                      <li class="list-group-item">Grippiness: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Grippiness"}
+                        />
+                      </li>
+                      <li class="list-group-item">Placement: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Placement"}
+                        />
+                      </li>
+                      <li class="list-group-item">Elusive Driving: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Elusive Driving"}
+                        />
+                      </li>
+                      <li class="list-group-item">Defensive Driving: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Defensive Driving"}
+                        />
+                      </li>
+                      <li class="list-group-item">Drive Team Coordination: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Drive Team Coordination"}
+                        />
+                      </li>
+                      <li class="list-group-item">Charge Station Balancing: 
+                      <SyncedTextBox
+                          placeholder="Overview of team"
+                          rows={3}
+                          name={team.team_number + "Charge Station"}
+                        />
+                      </li>
                     </Accordion.Body>
                   </Accordion>
                   <div class="dropdown-divider"></div>
@@ -77,12 +120,12 @@ export const Dashboard = ({ selectedTeamState }) => {
                       <SyncedTextBox
                         placeholder="Additional Notes"
                         rows={3}
-                        name={selectedTeamState.get().team_number + "Additional Notes:"}
+                        name={team.team_number + "Additional Notes:"}
                       />
                       <SyncedTextBox
                         placeholder="Strategy Notes"
                         rows={3}
-                        name={team.team_number}
+                        name={team.team_number + "Strategy Notes"}
                       />
                     </Accordion.Body>
                   </Accordion>
@@ -90,7 +133,13 @@ export const Dashboard = ({ selectedTeamState }) => {
                   <Accordion>
                     <Accordion.Header><h6>DNP?</h6></Accordion.Header>
                     <Accordion.Body>
-
+                      <Alert variant="danger">
+                        <SyncedTextBox
+                          placeholder="DNP?"
+                          rows={2}
+                          name={team.team_number + "DNP"}
+                        />
+                      </Alert>
                     </Accordion.Body>
                   </Accordion>
                   {/* {team.city}

@@ -150,7 +150,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <SyncedTextBox
                   placeholder="Overview of team"
                   rows={3}
-                  name={selectedTeamState.get().team_number + "Game Piece Grippiness"}
+                  name={selectedTeamState.get().team_number + "Grippiness"}
                 />
               </Form.Text>
               <br />
@@ -178,7 +178,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <SyncedTextBox
                   placeholder="Overview of team"
                   rows={3}
-                  name={selectedTeamState.get().team_number + "Game Piece Placement"}
+                  name={selectedTeamState.get().team_number + "Placement"}
                 />
               </Form.Text>
               <br />
@@ -266,7 +266,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <SyncedTextBox
                   placeholder="Overview of team"
                   rows={3}
-                  name={selectedTeamState.get().team_number + "Drive Team Communication/Coordination"}
+                  name={selectedTeamState.get().team_number + "Drive Team Coordination"}
                 />
               </Form.Text>
               <br />
@@ -297,7 +297,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <SyncedTextBox
                   placeholder="Overview of team"
                   rows={3}
-                  name={selectedTeamState.get().team_number + "Charge Station Parking"}
+                  name={selectedTeamState.get().team_number + "Charge Station"}
                 />
               </Form.Text>
               <br />
