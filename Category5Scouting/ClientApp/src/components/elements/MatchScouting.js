@@ -55,7 +55,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Auto Grippiness" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Grippiness"} />
             </Form>
           </Col>
           <Col>
@@ -82,7 +82,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Auto Placement" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Placement"} />
             </Form>
           </Col>
           </Row>
@@ -113,7 +113,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Auto Navigability" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Navigability"} />
             </Form>
           </Col>
           <Col></Col>
@@ -154,7 +154,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Game Piece Grippiness" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Game Piece Grippiness"} />
               <br />
               <br />
             </Form>
@@ -182,7 +182,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Game Piece Placement" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Game Piece Placement"} />
               <br />
               <br />
             </Form>
@@ -212,7 +212,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Elusive Driving" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Elusive Driving"} />
               <br />
               <br />
             </Form>
@@ -240,7 +240,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Defensive Driving" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Defensive Driving"} />
               <br />
               <br />
             </Form>
@@ -270,7 +270,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Drive Team Communication/Coordination" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Drive Team Communication"} />
               <br />
               <br />
             </Form>
@@ -301,7 +301,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name="Charge Station Parking" />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Charge Station Parking"} />
               <br />
               <br />
             </Form>
