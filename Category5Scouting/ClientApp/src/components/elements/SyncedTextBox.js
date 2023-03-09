@@ -17,7 +17,7 @@ export const SyncedTextBox = ( {placeholder, rows, name} ) => {
   }, [name]);
 
   let load = () => {
-    fetch("api/get?key=" + encodeURIComponent(name))
+    fetch("api/get?key=" + "text" + encodeURIComponent(name))
       .then(response => response.text())
       .then(data => {
         if (data != remoteValue) {
@@ -35,7 +35,7 @@ export const SyncedTextBox = ( {placeholder, rows, name} ) => {
       });
   }
   let save = () => {
-    fetch("api/set?key=" + name + "&value=" + encodeURIComponent(getTextareaValue()));
+    fetch("api/set?key=" + "text" + name + "&value=" + encodeURIComponent(getTextareaValue()));
   }
 
   let getTextareaValue = () => {
