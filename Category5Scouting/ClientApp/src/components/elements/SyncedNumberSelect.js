@@ -49,7 +49,7 @@ export const SyncedNumberSelect = ( {name} ) => {
     }
 
     save();
-  }, [radioValue], isLocalDirty)
+  }, [radioValue, isLocalDirty])
 
   let load = () => {
     fetch("api/get?key=" + "number" + encodeURIComponent(name))
