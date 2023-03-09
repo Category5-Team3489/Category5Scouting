@@ -154,7 +154,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Game Piece Grippiness"} />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Grippiness"} />
               <br />
               <br />
             </Form>
@@ -182,7 +182,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Game Piece Placement"} />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Placement"} />
               <br />
               <br />
             </Form>
@@ -301,7 +301,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 />
               </Form.Text>
               <br />
-              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Charge Station Parking"} />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Charge Station"} />
               <br />
               <br />
             </Form>
@@ -322,6 +322,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   rows={3}
                   name={selectedTeamState.get().team_number + "Additional Notes:"}
                 />
+                <SyncedNumberSelect name={selectedTeamState.get().team_number + "Additional Notes"} />
             </Form.Text>
           </Col>
         </Row>

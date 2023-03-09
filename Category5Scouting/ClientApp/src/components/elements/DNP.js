@@ -12,7 +12,7 @@ const textStyles = {
   color: "black"
 }
 
-export const DNP = () => {
+export const DNP = ( {selectedTeamState} ) => {
 
     return (
         <Alert variant="danger">
@@ -26,6 +26,11 @@ export const DNP = () => {
                     In your words please explain why you believe this team should be on the DNP list. <i>Be specific!</i>
                     <br />
                     <br />
+                    <SyncedTextBox
+                  placeholder="DNP?"
+                  rows={3}
+                  name={selectedTeamState.get().team_number + "DNP"}
+                />
                 </Form.Text>
                 </Container>
         </Alert>

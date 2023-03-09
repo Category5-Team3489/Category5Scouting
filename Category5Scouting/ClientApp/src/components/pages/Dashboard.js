@@ -47,7 +47,8 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Auto Grippiness"}
                         />
-                        {/* <SyncedNumberSelect name={team.team_number + "Auto Grippiness"} /> */}
+                        {/* <<SyncedNumberSelect name={team.team_number + "Auto Grippiness"} />> */}
+                        <SyncedNumberSelect name={team.team_number + "Auto Grippiness"} />
                       </li>
                       <li class="list-group-item">Placement:
                         <SyncedTextBox
@@ -55,6 +56,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Auto Placement"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Auto Placement"} />
                       </li>
                       <li class="list-group-item">Navigability: 
                       <SyncedTextBox
@@ -62,6 +64,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Auto Navigability"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Auto Navigability"} />
                       </li>
                     </Accordion.Body>
                   </Accordion>
@@ -75,6 +78,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Grippiness"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Grippiness"} />
                       </li>
                       <li class="list-group-item">Placement: 
                       <SyncedTextBox
@@ -82,6 +86,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Placement"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Placement"} />
                       </li>
                       <li class="list-group-item">Elusive Driving: 
                       <SyncedTextBox
@@ -89,6 +94,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Elusive Driving"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Elusive Driving"} />
                       </li>
                       <li class="list-group-item">Defensive Driving: 
                       <SyncedTextBox
@@ -96,6 +102,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Defensive Driving"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Defensive Driving"} />
                       </li>
                       <li class="list-group-item">Drive Team Coordination: 
                       <SyncedTextBox
@@ -103,6 +110,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Drive Team Coordination"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Drive Team Communication"} />
                       </li>
                       <li class="list-group-item">Charge Station Balancing: 
                       <SyncedTextBox
@@ -110,6 +118,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                           rows={3}
                           name={team.team_number + "Charge Station"}
                         />
+                        <SyncedNumberSelect name={team.team_number + "Charge Station"} />
                       </li>
                     </Accordion.Body>
                   </Accordion>
@@ -122,6 +131,7 @@ export const Dashboard = ({ selectedTeamState }) => {
                         rows={3}
                         name={team.team_number + "Additional Notes:"}
                       />
+                      <SyncedNumberSelect name={team.team_number + "Additional Notes"} />
                       <SyncedTextBox
                         placeholder="Strategy Notes"
                         rows={3}

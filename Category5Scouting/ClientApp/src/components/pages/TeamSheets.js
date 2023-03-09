@@ -28,7 +28,7 @@ export const TeamSheets = ( {state} ) => {
             <MatchScouting selectedTeamState={state.selectedTeamState} />
             <br />
             <br />
-            <DNP />
+            <DNP selectedTeamState={state.selectedTeamState} />
           </>
         ) : (
           <>
