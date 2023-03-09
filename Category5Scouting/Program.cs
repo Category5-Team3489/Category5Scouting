@@ -206,7 +206,7 @@ app.MapGet("/api/weather-forecast", () =>
 
 app.MapFallbackToFile("index.html");
 
-var serverTask = app.Environment.IsDevelopment() ? app.RunAsync("http://*:5194") : app.RunAsync("http://*:44464");
+var serverTask = app.Environment.IsDevelopment() ? app.RunAsync("http://*:5194") : app.RunAsync("http://*:25566"); // 44464
 // await processorTask;
 await serverTask;
 #endregion Category5Scouting
