@@ -76,7 +76,7 @@ export const SyncedNumberSelect = ( {name} ) => {
   useEffect(() => {
     const interval = setInterval(() => {
       load();
-    }, 250);
+    }, 2000 + Math.floor(Math.random() * 1000));
 
     return () => clearInterval(interval);
   }, [remoteValue, isRemoteDirty, isLocalDirty, radioValue]);
@@ -87,7 +87,7 @@ export const SyncedNumberSelect = ( {name} ) => {
         setRemoteDirty(false);
         setRadioValue(remoteValue);
       }
-    }, 250);
+    }, 2000 + Math.floor(Math.random() * 1000));
 
     return () => clearInterval(interval);
   }, [remoteValue, isRemoteDirty, isLocalDirty, radioValue]);

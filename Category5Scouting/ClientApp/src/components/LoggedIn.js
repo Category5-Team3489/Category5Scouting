@@ -27,10 +27,10 @@ const GetRoutes = (state) => [
   //   path: "/rankings",
   //   element: <Rankings state={state} />
   // },
-  {
-    path: "/dashboard",
-    element: <Dashboard state={state} />
-  },
+  // {
+  //   path: "/dashboard",
+  //   element: <Dashboard state={state} />
+  // },
   // {
   //   path: "/settings",
   //   element: <Settings state={state} />

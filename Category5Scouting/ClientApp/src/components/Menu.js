@@ -34,9 +34,9 @@ export function Menu() {
                 <Nav.Link>Rankings</Nav.Link>
               </LinkContainer> */}
 
-              <LinkContainer to="/dashboard">
+              {/* <LinkContainer to="/dashboard">
                 <Nav.Link>Dashboard</Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
 
               <NavDropdown title="Other" id="basic-nav-dropdown" menuVariant="dark">
                 <LinkContainer to="/useful-links">

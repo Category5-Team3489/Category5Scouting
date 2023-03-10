@@ -48,7 +48,7 @@ export const SyncedTextBox = ( {placeholder, rows, name} ) => {
   useEffect(() => {
     const interval = setInterval(() => {
       load();
-    }, 250);
+    }, 1000 + Math.floor(Math.random() * 1000));
 
     return () => clearInterval(interval);
   }, [remoteValue, isRemoteDirty, isLocalDirty]);
@@ -59,7 +59,7 @@ export const SyncedTextBox = ( {placeholder, rows, name} ) => {
         setRemoteDirty(false);
         setTextareaValue(remoteValue);
       }
-    }, 250);
+    }, 1000 + Math.floor(Math.random() * 1000));
 
     return () => clearInterval(interval);
   }, [remoteValue, isRemoteDirty, isLocalDirty]);

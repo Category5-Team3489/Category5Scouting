@@ -86,6 +86,17 @@ app.UseRouting();
 
 ConcurrentDictionary<string, string> data = new();
 
+Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\data");
+
+var files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"\data");
+foreach (var file in files)
+{
+    string fileName = file.Split(@"\").Last();
+    fileName = fileName[..^4];
+    data.TryAdd(fileName, File.ReadAllText(file));
+    Console.WriteLine("Loaded:" + fileName);
+}
+
 /*Processor<Context> processor = new();
 var processorTask = processor.RunAsync();*/
 
@@ -209,4 +220,11 @@ app.MapFallbackToFile("index.html");
 var serverTask = app.Environment.IsDevelopment() ? app.RunAsync("http://*:5194") : app.RunAsync("http://*:25566"); // 44464
 // await processorTask;
 await serverTask;
+
+Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\data");
+
+foreach (var kvp in data)
+{
+    File.WriteAllText(Directory.GetCurrentDirectory() + @"\data\" + kvp.Key + ".txt", kvp.Value);
+}
 #endregion Category5Scouting
