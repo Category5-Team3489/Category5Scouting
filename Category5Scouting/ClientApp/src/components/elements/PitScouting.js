@@ -2,6 +2,7 @@ import React from 'react';
 
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
+import { SyncedFieldMap } from './SyncedFieldMap';
 
 import { SyncedTextBox } from './SyncedTextBox';
 
@@ -16,6 +17,9 @@ export const PitScouting = ( {selectedTeamState} ) => {
         Pit Scouting
       </Alert.Heading>
       <br />
+
+    <SyncedFieldMap />
+
       {/* BEST THINGS */}
       <Form>
         <Form.Label>
