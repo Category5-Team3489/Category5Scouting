@@ -63,7 +63,7 @@ string TbaApiKeyPath = $"{Directory.GetCurrentDirectory()}/TbaApiKey.secret";
 IReadOnlyList<TeamSimpleSchema> teams = null!;
 if (File.Exists(TbaApiKeyPath))
 {
-    string eventKey = "2023scand";
+    string eventKey = "2023schar";
     string apiKey = File.ReadAllText(TbaApiKeyPath);
     HttpClient http = new();
     string endpoint = $"https://www.thebluealliance.com/api/v3/event/{eventKey}/teams/simple?X-TBA-Auth-Key={apiKey}";
