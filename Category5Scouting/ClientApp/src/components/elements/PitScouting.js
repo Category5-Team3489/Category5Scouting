@@ -18,16 +18,19 @@ export const PitScouting = ( {selectedTeamState} ) => {
       </Alert.Heading>
       <br />
 
-    <SyncedFieldMap />
-
+    <SyncedFieldMap 
+      className=""
+      name={selectedTeamState.get().team_number}
+    />
+    <br />
       {/* BEST THINGS */}
       <Form>
         <Form.Label>
-          <b>What are the best things about their robot?</b>
+          <b>1. Their opinion: Best part of the robot<br />2. Your opinion: Best part of the robot</b>
         </Form.Label>
         <SyncedTextBox
           className=""
-          placeholder="Best things"
+          placeholder="1 & 2 Here"
           rows={2}
           name={selectedTeamState.get().team_number + "Best Things"}
         />
@@ -36,18 +39,33 @@ export const PitScouting = ( {selectedTeamState} ) => {
       {/* GRIPPER? */}
       <Form>
         <Form.Label>
-          <b>Gripper?</b>
+          <b>Gripper and Arm Design?</b>
         </Form.Label>
+        <Form.Text style={textStyles}>
+          <br />
+          • Explain what the gripper's functionality is.
+          <br />
+          • Is it wheeled?
+          <br />
+          • Is it a claw? Any more observations:
+          <br />
+          • Explain what the arm's functionality is.
+          <br />
+          • Does it have a single pivot point or multiple?
+          <br />
+          • Is it capable of extending? Any more observations:
+          <br />
+        </Form.Text>
         <SyncedTextBox
           className=""
-          placeholder="What type of gripper? Describe the design"
-          rows={2}
+          placeholder="What type of gripper/arm? Describe the design"
+          rows={4}
           name={selectedTeamState.get().team_number + "Gripper"}
         />
       </Form>
       <br />
       {/* ARM */}
-      <Form>
+      {/* <Form>
         <Form.Label>
           <b>Arm Design?</b>
         </Form.Label>
@@ -66,8 +84,8 @@ export const PitScouting = ( {selectedTeamState} ) => {
           rows={2}
           name={selectedTeamState.get().team_number + "Arm Design"}
         />
-      </Form>
-      <br />
+      </Form> */}
+      {/* <br /> */}
       {/* Charge Station Strategy */}
       <Form>
         <Form.Label>
@@ -75,9 +93,11 @@ export const PitScouting = ( {selectedTeamState} ) => {
         </Form.Label>
         <Form.Text style={textStyles}>
             <br />
-        • Does the robot attempt to dock on the Charging Station?
+        • Can the robot dock on the charge station?
           <br />
-        • Does it have a mechanism to help balance/dock?
+        • Does it have a mechanism to aid it?
+          <br />
+        • Does it seem like it could dock effectively?
           <br />
         </Form.Text>
         <SyncedTextBox

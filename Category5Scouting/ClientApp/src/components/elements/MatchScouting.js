@@ -70,7 +70,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <br />
                   • How well does the robot line up on the node?
                 <br />
-                  • How well does the robot traverse the field with a game piece?
+                  • Does the robot have trouble with a specific game piece? Which one do they score better?
                 <br />
                   • Any other observations about the gripper's grippiness?
                 <br />
@@ -170,7 +170,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <br />
                   • How well does the robot line up on the node?
                 <br />
-                  • How well does the robot place the game piece?
+                • Does the robot have trouble with a specific game piece? Which one do they score better?
                 <br />
                   • How consistent overall is it?
                 <br />
@@ -198,9 +198,9 @@ export const MatchScouting = ( {selectedTeamState} ) => {
 
               <Form.Text style={textStyles}>
                 <br />
-                  • Do they avoid opposing defense well?
+                  • Do they avoid opposing defensive robots well?
                 <br />
-                  • Are they sufficiently aware of their surroundings, bracing for opposing defense?
+                  • Are they sufficiently aware of their surroundings, bracing for physical defense?
                 <br />
                   • Do they use the opponents to their advantage, either drawing penalties or scoring in spite of them?
                 <br />
@@ -226,11 +226,11 @@ export const MatchScouting = ( {selectedTeamState} ) => {
 
               <Form.Text style={textStyles}>
               <br />
-                  • Do they avoid opposing defense well?
+                  • Do they create challenging situations for offensive bots?
                 <br />
-                  • Are they sufficiently aware of their surroundings, bracing for opposing defense?
+                  • How physically do they defend? Do they defend well enough to force game piece drops?
                 <br />
-                  • Do they use the opponents to their advantage, either drawing penalties or scoring in spite of them?
+                  • Do they use the opponents to their advantage, such as drawing penalties or stealing game pieces?
                 <br />
                 <div className="mt-2" />
                 <SyncedTextBox
@@ -322,7 +322,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   rows={3}
                   name={selectedTeamState.get().team_number + "Additional Notes:"}
                 />
-                <SyncedNumberSelect name={selectedTeamState.get().team_number + "Additional Notes"} />
+                {/* <SyncedNumberSelect name={selectedTeamState.get().team_number + "Additional Notes"} /> */}
             </Form.Text>
           </Col>
         </Row>
