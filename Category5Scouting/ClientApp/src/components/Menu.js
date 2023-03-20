@@ -30,6 +30,10 @@ export function Menu() {
                 <Nav.Link>Team Sheets</Nav.Link>
               </LinkContainer>
 
+              <LinkContainer to="/playoffs">
+                <Nav.Link>Playoffs</Nav.Link>
+              </LinkContainer>
+
               {/* <LinkContainer to="/rankings">
                 <Nav.Link>Rankings</Nav.Link>
               </LinkContainer> */}

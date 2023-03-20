@@ -94,7 +94,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
             <Form>
               <Form.Label>
                 <br />
-                <br />
+                {/* <br /> */}
                 <b>Auto Navigability (How well they move around during auto)</b>
               </Form.Label>
 
