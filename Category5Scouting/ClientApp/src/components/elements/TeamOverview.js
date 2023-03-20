@@ -26,10 +26,10 @@ export const TeamOverview = ( {selectedTeamState} ) => {
 </Alert.Heading>
 {/* <Container fluid> */}
 <b>Scouter 1 Ranking:</b>
-<SyncedNumberSelect name={selectedTeamState.get().team_number + "Overall Rank"} />
+<SyncedNumberSelect name={selectedTeamState.get().team_number + "Overall Rank 1"} />
 <br />
 <b>Scouter 2 Ranking:</b>
-<SyncedNumberSelect name={selectedTeamState.get().team_number + "Overall Rank"} />
+<SyncedNumberSelect name={selectedTeamState.get().team_number + "Overall Rank 2"} />
     </Alert>
   );
 };
