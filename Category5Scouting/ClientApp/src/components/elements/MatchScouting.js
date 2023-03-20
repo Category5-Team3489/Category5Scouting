@@ -47,6 +47,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <br />
                   • Any other observations about the gripper's grippiness?
                 <br />
+                <br />
                 <div className="mt-2" />
                 <SyncedTextBox
                   placeholder="Overview of team"
@@ -54,8 +55,8 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Auto Grippiness"}
                 />
               </Form.Text>
-              <br />
-              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Grippiness"} />
+              {/* <br />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Grippiness"} /> */}
             </Form>
           </Col>
           <Col>
@@ -81,8 +82,8 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Auto Placement"}
                 />
               </Form.Text>
-              <br />
-              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Placement"} />
+              {/* <br />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Placement"} /> */}
             </Form>
           </Col>
           </Row>
@@ -112,8 +113,8 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Auto Navigability"}
                 />
               </Form.Text>
-              <br />
-              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Navigability"} />
+              {/* <br />
+              <SyncedNumberSelect name={selectedTeamState.get().team_number + "Auto Navigability"} /> */}
             </Form>
           </Col>
           <Col></Col>
@@ -146,6 +147,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                 <br />
                   • Any other observations about the gripper's grippiness?
                 <br />
+                <br />
                 <div className="mt-2" />
                 <SyncedTextBox
                   placeholder="Overview of team"
@@ -153,10 +155,10 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Grippiness"}
                 />
               </Form.Text>
-              <br />
+              {/* <br />
               <SyncedNumberSelect name={selectedTeamState.get().team_number + "Grippiness"} />
               <br />
-              <br />
+              <br /> */}
             </Form>
           </Col>
           <Col>
@@ -181,10 +183,10 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Placement"}
                 />
               </Form.Text>
-              <br />
+              {/* <br />
               <SyncedNumberSelect name={selectedTeamState.get().team_number + "Placement"} />
               <br />
-              <br />
+              <br /> */}
             </Form>
           </Col>
         </Row>
@@ -211,10 +213,10 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Elusive Driving"}
                 />
               </Form.Text>
-              <br />
+              {/* <br />
               <SyncedNumberSelect name={selectedTeamState.get().team_number + "Elusive Driving"} />
               <br />
-              <br />
+              <br /> */}
             </Form>
           </Col>
           <Col>
@@ -239,10 +241,10 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Defensive Driving"}
                 />
               </Form.Text>
-              <br />
+              {/* <br />
               <SyncedNumberSelect name={selectedTeamState.get().team_number + "Defensive Driving"} />
               <br />
-              <br />
+              <br /> */}
             </Form>
           </Col>
         </Row>
@@ -269,10 +271,10 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Drive Team Coordination"}
                 />
               </Form.Text>
-              <br />
+              {/* <br />
               <SyncedNumberSelect name={selectedTeamState.get().team_number + "Drive Team Communication"} />
               <br />
-              <br />
+              <br /> */}
             </Form>
           </Col>
           <Col>
@@ -300,10 +302,10 @@ export const MatchScouting = ( {selectedTeamState} ) => {
                   name={selectedTeamState.get().team_number + "Charge Station"}
                 />
               </Form.Text>
-              <br />
+              {/* <br />
               <SyncedNumberSelect name={selectedTeamState.get().team_number + "Charge Station"} />
               <br />
-              <br />
+              <br /> */}
             </Form>
           </Col>
         </Row>

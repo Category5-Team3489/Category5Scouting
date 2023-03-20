@@ -16,12 +16,12 @@ export const PitScouting = ( {selectedTeamState} ) => {
       <Alert.Heading>
         Pit Scouting
       </Alert.Heading>
-      <br />
+      {/* <br /> */}
 
-    <SyncedFieldMap 
+    {/* <SyncedFieldMap 
       className=""
       name={selectedTeamState.get().team_number}
-    />
+    /> */}
     <br />
       {/* BEST THINGS */}
       <Form>
