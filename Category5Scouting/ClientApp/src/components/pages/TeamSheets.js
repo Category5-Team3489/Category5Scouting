@@ -7,6 +7,7 @@ import { MatchScouting } from '../elements/MatchScouting';
 import { TeamSelector } from '../elements/TeamSelector';
 import { TeamOverview } from '../elements/TeamOverview';
 import { DNP } from '../elements/DNP';
+import { JamesNotes } from '../elements/JamesNotes'; 
 
 export const TeamSheets = ( {state} ) => {
   let isTeamSelected = () => state.selectedTeamState.get() != null;
@@ -18,6 +19,8 @@ export const TeamSheets = ( {state} ) => {
         isTeamSelected() ? (
           <>
             <br />
+            <br />
+            <JamesNotes selectedTeamState={state.selectedTeamState} />
             <br />
             <TeamOverview selectedTeamState={state.selectedTeamState} />
             <br />

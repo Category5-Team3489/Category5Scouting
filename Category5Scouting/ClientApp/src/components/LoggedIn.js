@@ -8,7 +8,7 @@ import { TeamSheets } from './pages/TeamSheets';
 // import { Rankings } from './archive/Rankings';
 // import { Settings } from './archive/Settings';
 import { Dashboard } from './pages/Dashboard';
-import { Playoffs } from './pages/Playoffs';
+// import { Playoffs } from './archive/Playoffs';
 
 import { UsefulLinks } from './other/UsefulLinks';
 // import { WeatherForecast } from './archive/WeatherForecast';
@@ -24,10 +24,10 @@ const GetRoutes = (state) => [
     path: "/team-sheets",
     element: <TeamSheets state={state} />
   },
-  {
-    path: "/playoffs",
-    element: <Playoffs selectedTeamState={state.selectedTeamState} />
-  },
+  // {
+  //   path: "/playoffs",
+  //   element: <Playoffs selectedTeamState={state.selectedTeamState} />
+  // },
   // {
   //   path: "/rankings",
   //   element: <Rankings state={state} />
