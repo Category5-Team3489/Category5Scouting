@@ -59,6 +59,8 @@ if (File.Exists(Cat5BotTokenPath))
 
 #region Category5Scouting
 #region Load TBA Data
+using System.Diagnostics;
+
 string TbaApiKeyPath = $"{Directory.GetCurrentDirectory()}/TbaApiKey.secret";
 IReadOnlyList<TeamSimpleSchema> teams = null!;
 if (File.Exists(TbaApiKeyPath))
@@ -219,12 +221,18 @@ app.MapFallbackToFile("index.html");
 
 var serverTask = app.Environment.IsDevelopment() ? app.RunAsync("http://*:5194") : app.RunAsync("http://*:25566"); // 44464
 // await processorTask;
-await serverTask;
 
-Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\data");
-
-foreach (var kvp in data)
+while (true)
 {
-    File.WriteAllText(Directory.GetCurrentDirectory() + @"\data\" + kvp.Key + ".txt", kvp.Value);
+    await Task.Delay(TimeSpan.FromMinutes(5));
+
+    Stopwatch sw = Stopwatch.StartNew();
+    foreach (var kvp in data)
+    {
+        File.WriteAllText(Directory.GetCurrentDirectory() + @"\data\" + kvp.Key + ".txt", kvp.Value);
+    }
+    Console.WriteLine(sw.Elapsed.ToString());
 }
+
+// await serverTask;
 #endregion Category5Scouting

@@ -322,7 +322,7 @@ export const MatchScouting = ( {selectedTeamState} ) => {
               <SyncedTextBox
                   placeholder="Overview of team"
                   rows={3}
-                  name={selectedTeamState.get().team_number + "Additional Notes:"}
+                  name={selectedTeamState.get().team_number + "Additional Notes"}
                 />
                 {/* <SyncedNumberSelect name={selectedTeamState.get().team_number + "Additional Notes"} /> */}
             </Form.Text>
