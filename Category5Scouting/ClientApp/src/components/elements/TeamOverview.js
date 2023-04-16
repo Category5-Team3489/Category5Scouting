@@ -17,7 +17,7 @@ export const TeamOverview = ( {selectedTeamState} ) => {
 
       <SyncedTextBox
         placeholder="Your observations"
-        rows={3}
+        rows={6}
         name={selectedTeamState.get().team_number + "overview"}
       />
 <br />

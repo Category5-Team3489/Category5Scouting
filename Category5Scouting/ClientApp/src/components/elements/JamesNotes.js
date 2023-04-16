@@ -19,9 +19,14 @@ export const JamesNotes = ({ selectedTeamState }) => {
                 James Notes:
             </Alert.Heading>
             <SyncedTextBox
-                placeholder="Update as needed"
-                rows={2}
-                name={selectedTeamState.get().team_number + "James"}
+                placeholder="Positive observations"
+                rows={5}
+                name={selectedTeamState.get().team_number + "JamesGood"}
+            />
+            <SyncedTextBox
+                placeholder="Negative observations"
+                rows={5}
+                name={selectedTeamState.get().team_number + "JamesBad"}
             />
         </Alert>
     )}
